@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
   }, []);
 
   const navLinks = [
-    { label: 'About', href: '#about', id: 'about' },
+    { label: 'About & Education', href: '#about', id: 'about' },
     { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'Projects', href: '#projects', id: 'projects' },
     { label: 'Skills', href: '#skills', id: 'skills' },
@@ -99,9 +99,9 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
           <button
             onClick={downloadResumeAsHTML}
             title="Download formatted CV"
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-medium text-brand-700 dark:text-brand-200 bg-cyanBrand-50 dark:bg-brand-950/60 hover:bg-cyanBrand-100 dark:hover:bg-brand-900/60 border border-cyanBrand-200 dark:border-brand-500/30 transition-all shadow-xs"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-cyanBrand-600 hover:from-brand-500 hover:to-cyanBrand-500 border border-brand-500/40 transition-all shadow-md shadow-brand-600/20"
           >
-            <MaterialIcon name="download" className="text-[17px] text-brand-500" />
+            <MaterialIcon name="download" className="text-[17px] text-white" />
             <span>Download CV</span>
           </button>
 

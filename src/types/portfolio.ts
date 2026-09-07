@@ -50,7 +50,6 @@ export interface SkillCategory {
   iconName: string;
   skills: {
     name: string;
-    level?: 'Advanced' | 'Proficient' | 'Familiar';
     highlight?: boolean;
   }[];
 }

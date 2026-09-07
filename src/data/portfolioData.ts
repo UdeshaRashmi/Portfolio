@@ -6,10 +6,10 @@ export const PERSONAL_INFO = {
   shortBio: "Passionate final-year Information Technology undergraduate at SLIIT with hands-on experience in modern frontend and full-stack web application development.",
   about: `I am a passionate final-year Information Technology undergraduate at SLIIT (Sri Lanka Institute of Information Technology) with strong hands-on experience in building modern, responsive, and user-centric web applications. 
 
-Specialized in frontend development with React.js, Next.js, TypeScript, and modern styling architectures, I also bring a solid foundation in backend services (Node.js, NestJS, Express, FastAPI) and cloud-ready microservice architectures. Having worked in industry Agile environments during my internship at NextGen CodeX, I excel at turning complex product requirements into clean, performant, and delightful digital experiences.
+Skilled in frontend development with React.js, Next.js, TypeScript, and modern styling architectures, I also bring a solid foundation in backend services (Node.js, NestJS, Express, FastAPI) and cloud-ready microservice architectures. Having worked in industry Agile environments during my internship at NextGen CodeX, I excel at turning complex product requirements into clean, performant, and delightful digital experiences.
 
 Currently seeking internship or associate-level opportunities in Software Engineering, Frontend Development, Full-Stack Development, or Web Application Development.`,
-  email: "udesharashmi@gmail.com",
+  email: "udesha77722@gmail.com",
   phone: "+94 77 123 4567",
   location: "Sri Lanka",
   educationInstitute: "SLIIT (Sri Lanka Institute of Information Technology)",
@@ -19,7 +19,7 @@ Currently seeking internship or associate-level opportunities in Software Engine
   socials: {
     github: "https://github.com/UdeshaRashmi",
     linkedin: "https://linkedin.com/in/udesha-rashmi",
-    email: "mailto:udesharashmi@gmail.com",
+    email: "mailto:udesha77722@gmail.com",
   },
   stats: [
     { label: "Academic Degree", value: "BSc. (Hons) IT @ SLIIT" },
@@ -77,7 +77,7 @@ export const EDUCATION_HISTORY: EducationEntry[] = [
     title: "Higher National Diploma in Information Technology",
     period: "Jan 2023 - Dec 2024",
     type: "Diploma",
-    iconName: "workspace_premium"
+    iconName: "school"
   },
   {
     id: "uom-full-stack",
@@ -85,14 +85,14 @@ export const EDUCATION_HISTORY: EducationEntry[] = [
     title: "Full Stack Developer Certificate Course, Full Stack Development",
     period: "Apr 2025 - Present",
     type: "Certificate",
-    iconName: "terminal"
+    iconName: "code_blocks"
   },
   {
     id: "british-council-english",
     institution: "British Council Sri Lanka",
     title: "Certificate course, English Language and Literature, General",
     type: "Certificate",
-    iconName: "language"
+    iconName: "translate"
   },
   {
     id: "hungama-wijayaba",
@@ -100,7 +100,7 @@ export const EDUCATION_HISTORY: EducationEntry[] = [
     title: "Ordinary Level and Advanced Level Education",
     description: "I successfully completed my Ordinary Level (O/L) examination in English medium, achieving grades A8 and C1, and went on to complete my Advanced Level (A/L) examinations in the Biological Stream, passing Biology, Chemistry, and Physics. I am proud to have passed both O/L and A/L examinations, which laid a strong academic foundation for my higher education and professional development.",
     type: "School",
-    iconName: "history_edu"
+    iconName: "emoji_events"
   },
   {
     id: "ambalantota-maha-vidyalaya",
@@ -108,7 +108,7 @@ export const EDUCATION_HISTORY: EducationEntry[] = [
     title: "Primary Education",
     description: "During my primary education, I studied at H/Ambalantota Maha Vidyalaya, where I built the early learning foundation that supported my academic journey.",
     type: "School",
-    iconName: "school"
+    iconName: "emoji_events"
   }
 ];
 
@@ -117,74 +117,74 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     title: "Programming Languages",
     iconName: "Code2",
     skills: [
-      { name: "TypeScript", level: "Advanced", highlight: true },
-      { name: "JavaScript (ES6+)", level: "Advanced", highlight: true },
-      { name: "Python", level: "Proficient", highlight: true },
-      { name: "Java", level: "Proficient" },
-      { name: "C / C++", level: "Familiar" },
-      { name: "R", level: "Familiar" },
+      { name: "TypeScript", highlight: true },
+      { name: "JavaScript (ES6+)", highlight: true },
+      { name: "Python", highlight: true },
+      { name: "Java" },
+      { name: "C / C++" },
+      { name: "R" },
     ]
   },
   {
     title: "Frontend Technologies",
     iconName: "Layout",
     skills: [
-      { name: "React.js", level: "Advanced", highlight: true },
-      { name: "Next.js", level: "Advanced", highlight: true },
-      { name: "Tailwind CSS", level: "Advanced", highlight: true },
-      { name: "Vue.js / Nuxt.js", level: "Proficient", highlight: true },
-      { name: "Angular", level: "Familiar" },
-      { name: "Bootstrap", level: "Proficient" },
-      { name: "PrimeNG", level: "Familiar" },
-      { name: "HTML5 & CSS3", level: "Advanced" },
+      { name: "React.js", highlight: true },
+      { name: "Next.js", highlight: true },
+      { name: "Tailwind CSS", highlight: true },
+      { name: "Vue.js / Nuxt.js", highlight: true },
+      { name: "Angular" },
+      { name: "Bootstrap" },
+      { name: "PrimeNG" },
+      { name: "HTML5 & CSS3" },
     ]
   },
   {
     title: "Backend Technologies",
     iconName: "Server",
     skills: [
-      { name: "Node.js", level: "Advanced", highlight: true },
-      { name: "Express.js", level: "Advanced", highlight: true },
-      { name: "NestJS", level: "Proficient", highlight: true },
-      { name: "FastAPI (Python)", level: "Proficient", highlight: true },
-      { name: "Spring Boot", level: "Familiar" },
-      { name: "REST API Development", level: "Advanced" },
+      { name: "Node.js", highlight: true },
+      { name: "Express.js", highlight: true },
+      { name: "NestJS", highlight: true },
+      { name: "FastAPI (Python)", highlight: true },
+      { name: "Spring Boot" },
+      { name: "REST API Development" },
     ]
   },
   {
     title: "Databases & ORMs",
     iconName: "Database",
     skills: [
-      { name: "PostgreSQL", level: "Proficient", highlight: true },
-      { name: "MongoDB", level: "Advanced", highlight: true },
-      { name: "MySQL", level: "Proficient" },
-      { name: "Prisma ORM", level: "Proficient", highlight: true },
-      { name: "SQLAlchemy", level: "Proficient" },
-      { name: "Hibernate", level: "Familiar" },
+      { name: "PostgreSQL", highlight: true },
+      { name: "MongoDB", highlight: true },
+      { name: "MySQL" },
+      { name: "Prisma ORM", highlight: true },
+      { name: "SQLAlchemy" },
+      { name: "Hibernate" },
     ]
   },
   {
     title: "Tools & DevOps",
     iconName: "Wrench",
     skills: [
-      { name: "Git & GitHub", level: "Advanced", highlight: true },
-      { name: "Postman", level: "Advanced" },
-      { name: "Swagger / OpenAPI", level: "Advanced" },
-      { name: "VS Code", level: "Advanced" },
-      { name: "IntelliJ IDEA", level: "Proficient" },
-      { name: "DBeaver", level: "Proficient" },
+      { name: "Git & GitHub", highlight: true },
+      { name: "Postman" },
+      { name: "Swagger / OpenAPI" },
+      { name: "VS Code" },
+      { name: "IntelliJ IDEA" },
+      { name: "DBeaver" },
     ]
   },
   {
     title: "Concepts & Architecture",
     iconName: "Cpu",
     skills: [
-      { name: "Microservices Architecture", level: "Advanced", highlight: true },
-      { name: "JWT Authentication & RBAC", level: "Advanced", highlight: true },
-      { name: "GIS Mapping (Leaflet)", level: "Proficient" },
-      { name: "Agile / Scrum Methodologies", level: "Advanced" },
-      { name: "OOP & Clean Architecture", level: "Advanced" },
-      { name: "SDLC Lifecycle", level: "Advanced" },
+      { name: "Microservices Architecture", highlight: true },
+      { name: "JWT Authentication & RBAC", highlight: true },
+      { name: "GIS Mapping (Leaflet)" },
+      { name: "Agile / Scrum Methodologies" },
+      { name: "OOP & Clean Architecture" },
+      { name: "SDLC Lifecycle" },
     ]
   }
 ];
@@ -351,7 +351,7 @@ export const CERTIFICATES: Certificate[] = [
     id: "web-design-beginners-uom",
     title: "Web Design for Beginners",
     issuer: "University of Moratuwa (CODL)",
-    badgeColor: "from-rose-500 to-pink-600",
+    badgeColor: "from-brand-600 to-cyanBrand-600",
     iconName: "Palette",
     skills: ["UI/UX Principles", "Layout Systems", "Color Theory", "Web Accessibility"]
   },

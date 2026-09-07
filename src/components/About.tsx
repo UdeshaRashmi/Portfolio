@@ -62,21 +62,23 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-16">
           
           {/* Photo Card (Col 4) */}
-          <div className="lg:col-span-4 flex flex-col items-center justify-between p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-100 dark:border-roseBrand-500/20 shadow-md">
+          <div className="lg:col-span-4 flex flex-col items-center justify-start gap-5 p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-cyanBrand-200/80 dark:border-slate-700/70 shadow-md">
             
-            {/* Image Container with Glow */}
+            {/* Image Container */}
             <div className="relative w-full flex flex-col items-center">
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-brand-500/40 shadow-lg bg-slate-900">
-                <img
-                  src="/images/image.png"
-                  alt={PERSONAL_INFO.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative w-52 h-52 sm:w-60 sm:h-60 rounded-full p-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-lg">
+                <div className="w-full h-full rounded-full overflow-hidden bg-slate-100 dark:bg-slate-900 border-4 border-white dark:border-slate-950">
+                  <img
+                    src="/images/image.png"
+                    alt={PERSONAL_INFO.name}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
               </div>
             </div>
 
             {/* Quick Profile Bio strip */}
-            <div className="w-full mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 text-center">
+            <div className="w-full pt-5 border-t border-slate-200 dark:border-slate-800 text-center">
               <h4 className="text-base font-bold text-slate-900 dark:text-white">
                 {PERSONAL_INFO.name}
               </h4>
@@ -84,65 +86,31 @@ export const About: React.FC = () => {
                 BSc. (Hons) IT Undergraduate @ SLIIT
               </p>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
-                Specialized in React, Next.js, TypeScript & Full-Stack Development
+                Skilled in React, Next.js, TypeScript & Full-Stack Development
               </p>
             </div>
 
           </div>
 
-          {/* Bio & Story Card (Col 8) */}
-          <div className="lg:col-span-8 flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-100 dark:border-roseBrand-500/20 shadow-md">
+          {/* About Card (Col 8) */}
+          <div className="lg:col-span-8 flex flex-col justify-start p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-cyanBrand-200/80 dark:border-slate-700/70 shadow-md">
             <div>
-              <div className="flex items-center justify-between gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 dark:text-white">
-                  Professional Background
+                  About Me
                 </h3>
-                <span className="text-xs px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-950/60 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-300 font-mono font-semibold">
-                  Final-Year Student
-                </span>
               </div>
               
               <div className="space-y-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
                 <p>
-                  I am <strong className="text-slate-900 dark:text-white font-semibold">Udesha Rashmi</strong>, a final-year Information Technology undergraduate at <strong className="text-brand-600 dark:text-brand-400">SLIIT (Sri Lanka Institute of Information Technology)</strong>.
+                  I am currently an undergraduate pursuing a degree in <strong className="text-slate-900 dark:text-white font-semibold">Information Technology</strong>. I have completed a six-month internship as a <strong className="text-brand-600 dark:text-brand-400">Frontend Developer at NextGen CodeX PVT LTD</strong>, where I gained practical experience in developing responsive web applications and working in a collaborative development environment.
                 </p>
                 <p>
-                  Throughout my academic journey and professional internship as a <strong>Frontend Developer at NextGen CodeX PVT LTD</strong>, I have designed and developed modern, high-performance web applications using <strong>React.js, Next.js, TypeScript, Tailwind CSS, and Bootstrap</strong>.
-                </p>
-                <p>
-                  My experience also spans full-stack services with <strong>Node.js, Express.js, NestJS, FastAPI, PostgreSQL, and MongoDB</strong>, as well as distributed microservices and Machine Learning integration in disaster response research.
+                  In addition to my internship experience, I have academic knowledge of full-stack web development through university coursework and personal projects. I am eager to expand my skills, take on real-world challenges, and learn from experienced professionals.
                 </p>
               </div>
 
-              {/* Quick Checklist */}
-              <div className="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                <div className="flex items-center gap-2">
-                  <MaterialIcon name="check_circle" className="text-[18px] text-roseBrand-500 shrink-0" filled />
-                  <span>React.js & Next.js Ecosystem</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MaterialIcon name="check_circle" className="text-[18px] text-roseBrand-500 shrink-0" filled />
-                  <span>TypeScript & Component Architecture</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MaterialIcon name="check_circle" className="text-[18px] text-roseBrand-500 shrink-0" filled />
-                  <span>RESTful APIs & Microservices</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MaterialIcon name="check_circle" className="text-[18px] text-roseBrand-500 shrink-0" filled />
-                  <span>Agile / Scrum Sprint Experience</span>
-                </div>
-              </div>
             </div>
-
-            {/* Seeking Opportunities Strip */}
-            <div className="mt-6 p-4 rounded-2xl bg-brand-50/70 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-800/40 flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
-              <p className="text-xs text-slate-700 dark:text-slate-300 font-medium">
-                <strong className="text-slate-900 dark:text-white">Seeking Opportunities:</strong> Open to Associate Software Engineer, Frontend, and Full-Stack development roles.
-              </p>
-            </div>
-
           </div>
 
         </div>

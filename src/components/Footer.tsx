@@ -22,19 +22,19 @@ export const Footer: React.FC = () => {
                 {PERSONAL_INFO.name}
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-400 max-w-sm">
+            <p className="text-xs sm:text-sm text-slate-300 max-w-sm">
               Final-Year Information Technology Undergraduate at SLIIT. Building modern, scalable, and responsive web applications.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-slate-400 font-medium">
-            <a href="#about" className="hover:text-brand-300 transition-colors">About</a>
-            <a href="#experience" className="hover:text-brand-300 transition-colors">Experience</a>
-            <a href="#projects" className="hover:text-brand-300 transition-colors">Projects</a>
-            <a href="#skills" className="hover:text-brand-300 transition-colors">Skills</a>
-            <a href="#certificates" className="hover:text-brand-300 transition-colors">Certificates</a>
-            <a href="#contact" className="hover:text-brand-300 transition-colors">Contact</a>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-slate-300 font-semibold">
+            <a href="#about" className="hover:text-cyanBrand-300 transition-colors">About & Education</a>
+            <a href="#experience" className="hover:text-cyanBrand-300 transition-colors">Experience</a>
+            <a href="#projects" className="hover:text-cyanBrand-300 transition-colors">Projects</a>
+            <a href="#skills" className="hover:text-cyanBrand-300 transition-colors">Skills</a>
+            <a href="#certificates" className="hover:text-cyanBrand-300 transition-colors">Certificates</a>
+            <a href="#contact" className="hover:text-cyanBrand-300 transition-colors">Contact</a>
           </div>
 
           {/* Socials & Back to Top */}
@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub Profile"
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-brand-500/50 transition-colors"
+              className="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-brand-500/60 transition-colors"
             >
               <MaterialIcon name="code" className="text-[18px]" />
             </a>
@@ -53,14 +53,14 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn Profile"
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-cyan-500/50 transition-colors"
+              className="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-cyan-500/60 transition-colors"
             >
               <MaterialIcon name="work" className="text-[18px]" />
             </a>
             <a
               href={PERSONAL_INFO.socials.email}
               aria-label="Email"
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-rose-500/50 transition-colors"
+              className="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-cyanBrand-500/60 transition-colors"
             >
               <MaterialIcon name="mail" className="text-[18px]" />
             </a>
@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Credits */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center sm:text-left">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300 text-center sm:text-left">
           <p>© {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.</p>
           <p className="flex items-center justify-center gap-1.5">
             <span>Engineered with React, TypeScript & Tailwind CSS</span>

@@ -61,15 +61,8 @@ export const Certificates: React.FC = () => {
                     )}
 
                     {cert.credentialName && (
-                      <div className="mt-5 flex items-center gap-4">
-                        <div className="h-14 w-28 shrink-0 rounded-lg border border-cyanBrand-200 dark:border-slate-700 bg-gradient-to-br from-white to-cyanBrand-50 dark:from-slate-900 dark:to-slate-800 p-2 shadow-xs">
-                          <div className="h-1.5 w-12 rounded bg-cyanBrand-300" />
-                          <div className="mt-2 h-1 w-16 rounded bg-slate-300 dark:bg-slate-600" />
-                          <div className="mt-1 h-1 w-10 rounded bg-slate-200 dark:bg-slate-700" />
-                          <div className="mt-3 text-right text-[9px] font-bold text-slate-900 dark:text-white">
-                            aws
-                          </div>
-                        </div>
+                      <div className="mt-4 flex items-center gap-2">
+                        <MaterialIcon name="verified" className="text-[18px] text-cyanBrand-500" filled />
                         <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
                           {cert.credentialName}
                         </p>

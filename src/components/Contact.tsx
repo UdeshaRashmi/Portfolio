@@ -95,7 +95,7 @@ export const Contact: React.FC = () => {
 
               {/* Mailto link */}
               <a
-                href={PERSONAL_INFO.socials.email}
+                href={`mailto:${PERSONAL_INFO.email}`}
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 shadow-md shadow-pink-500/30 transition-all hover:scale-[1.02]"
               >
                 <MaterialIcon name="mail" className="text-[18px]" />
@@ -107,7 +107,7 @@ export const Contact: React.FC = () => {
             {/* Social Cards */}
             <div className="grid grid-cols-2 gap-4">
               <a
-                href={PERSONAL_INFO.socials.linkedin}
+                href="https://linkedin.com/in/udesha-rashmi-944894331"
                 target="_blank"
                 rel="noreferrer"
                 className="p-5 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-200/80 dark:border-roseBrand-500/20 hover:border-purple-400 dark:hover:border-purple-500 transition-all group backdrop-blur-md shadow-sm"
@@ -122,7 +122,7 @@ export const Contact: React.FC = () => {
               </a>
 
               <a
-                href={PERSONAL_INFO.socials.github}
+                href="https://github.com/UdeshaRashmi"
                 target="_blank"
                 rel="noreferrer"
                 className="p-5 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-200/80 dark:border-roseBrand-500/20 hover:border-pink-400 dark:hover:border-pink-500 transition-all group backdrop-blur-md shadow-sm"

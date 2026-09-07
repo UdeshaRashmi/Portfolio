@@ -97,22 +97,6 @@ export const Experience: React.FC = () => {
                 </div>
               </div>
 
-              {/* Interactive Highlight Bar */}
-              <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-pink-50 via-purple-50 to-pink-50 dark:from-purple-950/40 dark:via-[#151024] dark:to-purple-950/40 border border-pink-200 dark:border-purple-900/40 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-pink-100 dark:bg-pink-500/20 flex items-center justify-center text-pink-600 dark:text-pink-400">
-                    <MaterialIcon name="bolt" className="text-[20px]" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-900 dark:text-white">Full-Cycle Frontend Delivery</p>
-                    <p className="text-[11px] text-slate-600 dark:text-slate-400">Sprint planning, PR reviews, component libraries, and cross-browser quality</p>
-                  </div>
-                </div>
-                <span className="hidden sm:inline-flex items-center gap-1 text-xs text-pink-600 dark:text-pink-400 font-mono font-semibold">
-                  <MaterialIcon name="account_tree" className="text-[17px]" /> Agile Teamwork
-                </span>
-              </div>
-
             </div>
           ))}
         </div>

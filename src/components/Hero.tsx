@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { downloadResumeAsHTML } from '../utils/downloadResume';
 import { MaterialIcon } from './MaterialIcon';
@@ -7,44 +7,7 @@ interface HeroProps {
   onOpenResume: () => void;
 }
 
-const roles = [
-  "Frontend Developer",
-  "Full-Stack Developer",
-  "React & Next.js Engineer",
-  "IT Undergraduate @ SLIIT",
-  "UI/UX Driven Problem Solver"
-];
-
 export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(100);
-
-  useEffect(() => {
-    const currentRole = roles[roleIndex];
-    
-    const handleTyping = () => {
-      if (!isDeleting) {
-        setDisplayText(currentRole.substring(0, displayText.length + 1));
-        if (displayText === currentRole) {
-          setTimeout(() => setIsDeleting(true), 1800);
-          setTypingSpeed(50);
-        }
-      } else {
-        setDisplayText(currentRole.substring(0, displayText.length - 1));
-        if (displayText === "") {
-          setIsDeleting(false);
-          setRoleIndex((prev) => (prev + 1) % roles.length);
-          setTypingSpeed(100);
-        }
-      }
-    };
-
-    const timer = setTimeout(handleTyping, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, roleIndex, typingSpeed]);
-
   return (
     <section id="hero" className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden">
       {/* Background Ambient Glows */}
@@ -76,23 +39,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
             {/* Name & Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-4">
-              Hi, I'm <span className="gradient-text">{PERSONAL_INFO.name}</span>
+              Hi, I'm <span className="gradient-text">Rashmi</span>
             </h1>
 
-            {/* Typing Subheading (NO wavy underline, clean developer gradient) */}
-            <div className="h-10 sm:h-12 flex items-center mb-6">
-              <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-700 dark:text-slate-300">
-                I'm a{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-cyanBrand-400 to-indigo-400 font-mono font-bold">
-                  {displayText}
-                </span>
-                <span className="text-cyanBrand-400 font-bold ml-0.5">|</span>
-              </span>
+            {/* Headline */}
+            <div className="mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-slate-700 dark:text-slate-200">
+                Full Stack Developer & IT Undergraduate
+              </h2>
             </div>
 
             {/* Concise Bio */}
             <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-              Final-year IT undergraduate at <strong className="text-slate-900 dark:text-white font-semibold">SLIIT</strong> with industry internship experience at <strong className="text-brand-600 dark:text-brand-300">NextGen CodeX</strong>. Skilled in engineering fast, scalable, and responsive web applications using <span className="text-brand-700 dark:text-cyanBrand-200 font-mono text-sm bg-cyanBrand-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">React.js</span>, <span className="text-brand-700 dark:text-cyanBrand-200 font-mono text-sm bg-cyanBrand-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">Next.js</span>, <span className="text-brand-700 dark:text-cyanBrand-200 font-mono text-sm bg-cyanBrand-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">TypeScript</span>, and modern full-stack systems.
+              I build modern, responsive, and user-friendly web experiences with a passion for turning ideas into beautiful digital solutions.
             </p>
 
             {/* Action Buttons */}
@@ -167,73 +126,95 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
           {/* Right Column: Interactive Code Terminal Card */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl p-1 bg-gradient-to-br from-brand-500/30 via-purple-500/20 to-cyan-500/30 shadow-2xl shadow-brand-950/40">
+            <div className="relative rounded-2xl p-1 bg-gradient-to-br from-brand-500/45 via-cyanBrand-500/25 to-cyan-500/45 shadow-2xl shadow-brand-950/40">
               
               {/* Terminal Window Card */}
-              <div className="rounded-xl bg-slate-900 dark:bg-[#0d121f] border border-slate-800 p-5 backdrop-blur-xl text-xs font-mono text-slate-300 shadow-inner">
+              <div className="rounded-xl bg-[#07111f] dark:bg-[#07111f] border border-cyanBrand-500/25 p-5 backdrop-blur-xl text-xs font-mono text-slate-100 shadow-inner">
                 
                 {/* Terminal Header */}
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
+                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-700/80">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-sky-500/80" />
                     <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                     <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                   </div>
-                  <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                  <div className="flex items-center gap-1.5 text-[11px] text-slate-200">
                     <MaterialIcon name="terminal" className="text-[17px] text-cyanBrand-300" />
                     <span>developer.profile.ts</span>
                   </div>
-                  <span className="text-[10px] text-brand-400 font-semibold px-2 py-0.5 rounded bg-brand-950/60 border border-brand-800/50">
+                  <span className="text-[10px] text-cyanBrand-100 font-semibold px-2 py-0.5 rounded bg-brand-700/40 border border-brand-400/40">
                     TypeScript
                   </span>
                 </div>
 
                 {/* Code Body */}
-                <div className="space-y-2 leading-relaxed">
+                <div className="space-y-2 leading-relaxed break-words overflow-x-hidden">
                   <p>
-                    <span className="text-purple-400">const</span>{' '}
-                    <span className="text-cyan-300">candidate</span>: <span className="text-yellow-300">SoftwareEngineer</span> = &#123;
+                    <span className="text-violet-300">const</span>{' '}
+                    <span className="text-cyanBrand-200">candidate</span>: <span className="text-yellow-200">SoftwareEngineer</span> = &#123;
                   </p>
                   <p className="pl-4">
-                    <span className="text-slate-400">name:</span>{' '}
-                    <span className="text-emerald-300">"{PERSONAL_INFO.name}"</span>,
+                    <span className="text-slate-200">name:</span>{' '}
+                    <span className="text-emerald-200">"{PERSONAL_INFO.name}"</span>,
                   </p>
                   <p className="pl-4">
-                    <span className="text-slate-400">education:</span> &#123;
+                    <span className="text-slate-200">education:</span> &#123;
                   </p>
                   <p className="pl-8">
-                    <span className="text-slate-400">institute:</span> <span className="text-emerald-300">"SLIIT"</span>,
+                    <span className="text-slate-200">institute:</span> <span className="text-emerald-200">"SLIIT"</span>,
                   </p>
                   <p className="pl-8">
-                    <span className="text-slate-400">degree:</span> <span className="text-emerald-300">"BSc. (Hons) IT (Final Year)"</span>,
+                    <span className="text-slate-200">degree:</span> <span className="text-emerald-200">"BSc. (Hons) IT (Final Year)"</span>,
                   </p>
                   <p className="pl-4">&#125;,</p>
                   <p className="pl-4">
-                    <span className="text-slate-400">experience:</span> <span className="text-amber-300">"Frontend Dev Intern @ NextGen CodeX"</span>,
+                    <span className="text-slate-200">experience:</span> <span className="text-amber-200">"Frontend Dev Intern @ NextGen CodeX"</span>,
                   </p>
                   <p className="pl-4">
-                    <span className="text-slate-400">coreStack:</span> [
+                    <span className="text-slate-200">coreStack:</span> [
                   </p>
-                  <p className="pl-8 text-brand-300">
+                  <p className="pl-8 text-cyanBrand-100">
                     "React.js", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "NestJS", "FastAPI"
                   </p>
                   <p className="pl-4">],</p>
                   <p className="pl-4">
-                    <span className="text-slate-400">mindset:</span> [
+                    <span className="text-slate-200">skills:</span> &#123;
                   </p>
-                  <p className="pl-8 text-cyan-300">
+                  <p className="pl-8">
+                    <span className="text-slate-200">languages:</span> <span className="text-cyanBrand-200">["JavaScript", "TypeScript", "Python", "Java", "C", "C++", "R"]</span>,
+                  </p>
+                  <p className="pl-8">
+                    <span className="text-slate-200">frontend:</span> <span className="text-cyanBrand-200">["HTML", "CSS", "React.js", "Next.js", "Vue.js", "Nuxt.js", "Angular", "Tailwind CSS"]</span>,
+                  </p>
+                  <p className="pl-8">
+                    <span className="text-slate-200">backend:</span> <span className="text-cyanBrand-200">["Node.js", "Express.js", "NestJS", "Spring Boot", "FastAPI"]</span>,
+                  </p>
+                  <p className="pl-8">
+                    <span className="text-slate-200">data:</span> <span className="text-cyanBrand-200">["PostgreSQL", "MySQL", "MongoDB", "Prisma ORM", "SQLAlchemy", "Hibernate"]</span>,
+                  </p>
+                  <p className="pl-8">
+                    <span className="text-slate-200">tools:</span> <span className="text-cyanBrand-200">["Postman", "Swagger", "VS Code", "IntelliJ IDEA", "DBeaver", "Git", "GitHub"]</span>,
+                  </p>
+                  <p className="pl-8">
+                    <span className="text-slate-200">concepts:</span> <span className="text-cyanBrand-200">["REST APIs", "JWT Auth", "Microservices", "GIS Mapping", "Agile/Scrum", "SDLC", "OOP"]</span>
+                  </p>
+                  <p className="pl-4">&#125;,</p>
+                  <p className="pl-4">
+                    <span className="text-slate-200">mindset:</span> [
+                  </p>
+                  <p className="pl-8 text-cyanBrand-200">
                     "Agile/Scrum", "Clean Code", "High Performance", "Continuous Learner"
                   </p>
                   <p className="pl-4">],</p>
                   <p className="pl-4">
-                    <span className="text-slate-400">status:</span>{' '}
+                    <span className="text-slate-200">status:</span>{' '}
                     <span className="text-emerald-400 font-bold">"Ready to make an impact"</span>
                   </p>
                   <p>&#125;;</p>
                 </div>
 
                 {/* Quick Interactive Terminal Banner */}
-                <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                <div className="mt-4 pt-3 border-t border-slate-700/80 flex items-center justify-between text-[11px] text-slate-200">
                   <div className="flex items-center gap-1 text-emerald-400">
                     <MaterialIcon name="check_circle" className="text-[17px]" filled />
                     <span>Clean Architecture</span>
@@ -245,37 +226,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 </div>
 
               </div>
-
-              {/* Floating Pill Badges around card */}
-              <div className="absolute -bottom-4 -left-4 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs font-semibold text-slate-800 dark:text-white">
-                <span className="w-2 h-2 rounded-full bg-cyanBrand-400" />
-                <span>4th Year Research Ongoing</span>
-              </div>
-
-              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-xl bg-brand-900/90 border border-brand-500/50 shadow-xl backdrop-blur-md flex items-center gap-1.5 text-xs font-semibold text-brand-200">
-                <span>NextGen CodeX Alum</span>
-              </div>
             </div>
 
           </div>
 
-        </div>
-
-        {/* Bottom Quick Stats Strip */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {PERSONAL_INFO.stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="p-4 rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 backdrop-blur-sm hover:border-brand-500/40 transition-all group shadow-xs hover:shadow-md"
-            >
-              <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-mono font-medium mb-1">
-                {stat.label}
-              </p>
-              <p className="text-base sm:text-lg font-display font-bold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-300 transition-colors">
-                {stat.value}
-              </p>
-            </div>
-          ))}
         </div>
 
       </div>
