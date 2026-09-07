@@ -6,7 +6,8 @@ import {
   CheckCircle2, 
   Layers, 
   GitBranch, 
-  Zap 
+  Zap,
+  Sparkles
 } from 'lucide-react';
 import { EXPERIENCES } from '../data/portfolioData';
 
@@ -14,20 +15,20 @@ export const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-20 md:py-28 relative">
       {/* Background Glow */}
-      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-cyan-700/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-purple-500/10 dark:bg-purple-700/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Briefcase className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-purple-100/80 dark:bg-purple-950/70 border border-purple-300 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-semibold uppercase tracking-wider mb-3">
+            <Briefcase className="w-3.5 h-3.5 text-purple-500" />
             <span>Career Milestones</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
-            Work <span className="gradient-text">Experience</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
+            Work <span className="gradient-text">Experience</span> 💼
           </h2>
-          <p className="mt-3 text-slate-400 text-base sm:text-lg max-w-2xl">
+          <p className="mt-3 text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl">
             Practical software engineering experience building real-world products in Agile team environments.
           </p>
         </div>
@@ -37,35 +38,35 @@ export const Experience: React.FC = () => {
           {EXPERIENCES.map((exp) => (
             <div
               key={exp.id}
-              className="relative p-6 sm:p-8 rounded-3xl bg-slate-900/70 border border-slate-800 backdrop-blur-md shadow-2xl hover:border-cyan-500/40 transition-all group overflow-hidden"
+              className="relative p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#151024]/80 border border-pink-200/80 dark:border-purple-900/50 backdrop-blur-md shadow-xl hover:border-pink-400 dark:hover:border-purple-500/60 transition-all group overflow-hidden"
             >
-              {/* Subtle gradient strip on top */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-500 via-cyan-400 to-indigo-500" />
+              {/* Top Pink-Violet Gradient Bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600" />
 
               {/* Header row */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-pink-100 dark:border-purple-900/40">
                 <div>
                   <div className="flex items-center gap-2.5 flex-wrap">
-                    <h3 className="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
                       {exp.role}
                     </h3>
-                    <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-950 text-brand-300 border border-brand-800/60">
+                    <span className="px-3 py-0.5 rounded-full text-xs font-semibold bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 border border-pink-300 dark:border-pink-800">
                       {exp.type}
                     </span>
                   </div>
                   
-                  <div className="text-base sm:text-lg font-semibold text-slate-200 mt-1 flex items-center gap-2">
-                    <span className="text-cyan-400">{exp.company}</span>
+                  <div className="text-base sm:text-lg font-semibold text-slate-800 dark:text-slate-200 mt-1 flex items-center gap-2">
+                    <span className="text-pink-600 dark:text-pink-400">{exp.company}</span>
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:items-end gap-1.5 text-xs text-slate-400 font-mono">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 text-slate-300">
-                    <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                <div className="flex flex-col sm:items-end gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-mono">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium">
+                    <Calendar className="w-3.5 h-3.5 text-pink-500" />
                     <span>{exp.period}</span>
                   </div>
-                  <div className="inline-flex items-center gap-1 text-slate-400">
-                    <MapPin className="w-3.5 h-3.5 text-rose-400" />
+                  <div className="inline-flex items-center gap-1 text-slate-500 dark:text-slate-400">
+                    <MapPin className="w-3.5 h-3.5 text-rose-500" />
                     <span>{exp.location}</span>
                   </div>
                 </div>
@@ -73,13 +74,14 @@ export const Experience: React.FC = () => {
 
               {/* Responsibilities list */}
               <div className="py-6 space-y-3.5">
-                <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                  Key Accomplishments & Impact
+                <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-pink-600 dark:text-pink-400 mb-2 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-pink-500" />
+                  <span>Key Accomplishments & Impact</span>
                 </h4>
                 {exp.description.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 mt-1 shrink-0 group-hover:scale-110 transition-transform" />
-                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-pink-500 mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                    <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
                       {item}
                     </p>
                   </div>
@@ -87,16 +89,16 @@ export const Experience: React.FC = () => {
               </div>
 
               {/* Technologies used */}
-              <div className="pt-4 border-t border-slate-800">
-                <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
-                  <Layers className="w-3.5 h-3.5 text-brand-400" />
+              <div className="pt-4 border-t border-pink-100 dark:border-purple-900/40">
+                <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-purple-600 dark:text-purple-400 mb-3 flex items-center gap-2">
+                  <Layers className="w-3.5 h-3.5 text-purple-500" />
                   <span>Tech Stack & Workflow</span>
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded-lg text-xs font-medium bg-slate-800/90 text-slate-300 border border-slate-700/60 hover:border-cyan-500/50 hover:text-white transition-colors"
+                      className="px-3 py-1 rounded-xl text-xs font-medium bg-pink-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-pink-200 dark:border-purple-800 hover:border-pink-400 dark:hover:border-pink-500 transition-colors"
                     >
                       {tech}
                     </span>
@@ -105,18 +107,18 @@ export const Experience: React.FC = () => {
               </div>
 
               {/* Interactive Highlight Bar */}
-              <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-slate-900 via-cyan-950/20 to-slate-900 border border-cyan-900/40 flex items-center justify-between">
+              <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-pink-50 via-purple-50 to-pink-50 dark:from-purple-950/40 dark:via-[#151024] dark:to-purple-950/40 border border-pink-200 dark:border-purple-900/40 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                  <div className="w-8 h-8 rounded-xl bg-pink-100 dark:bg-pink-500/20 flex items-center justify-center text-pink-600 dark:text-pink-400">
                     <Zap className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-white">Full-Cycle Frontend Delivery</p>
-                    <p className="text-[11px] text-slate-400">Collaborated in fast-paced sprints with Git PRs, peer reviews, & design parity</p>
+                    <p className="text-xs font-bold text-slate-900 dark:text-white">Full-Cycle Frontend Delivery</p>
+                    <p className="text-[11px] text-slate-600 dark:text-slate-400">Sprint planning, PR reviews, component libraries, and cross-browser quality</p>
                   </div>
                 </div>
-                <span className="hidden sm:inline-flex items-center gap-1 text-xs text-cyan-400 font-mono">
-                  <GitBranch className="w-3.5 h-3.5" /> Agile Verified
+                <span className="hidden sm:inline-flex items-center gap-1 text-xs text-pink-600 dark:text-pink-400 font-mono font-semibold">
+                  <GitBranch className="w-3.5 h-3.5" /> Agile Teamwork
                 </span>
               </div>
 
@@ -128,3 +130,4 @@ export const Experience: React.FC = () => {
     </section>
   );
 };
+

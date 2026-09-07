@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sparkles, FileText, Moon, Sun, ArrowUpRight } from 'lucide-react';
+import { Menu, X, Download, Moon, Sun, ArrowUpRight, FileText } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { downloadResumeAsHTML } from '../utils/downloadResume';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -50,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-950/80 dark:bg-[#0a0d14]/85 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/20 py-3.5'
+          ? 'bg-white/90 dark:bg-[#0a0d14]/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 shadow-md shadow-black/5 py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -58,13 +59,13 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
         {/* Brand Logo */}
         <a
           href="#hero"
-          className="group flex items-center gap-2.5 text-lg sm:text-xl font-display font-bold tracking-tight text-white focus:outline-none"
+          className="group flex items-center gap-2.5 text-lg sm:text-xl font-display font-bold tracking-tight text-slate-900 dark:text-white focus:outline-none"
         >
-          <span className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 via-brand-500 to-accent-cyan flex items-center justify-center text-white font-mono font-bold shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <span className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 via-purple-600 to-cyan-500 flex items-center justify-center text-white font-mono font-bold shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform text-sm">
             UR
           </span>
           <span className="flex items-center gap-1">
-            <span className="text-slate-100 group-hover:text-brand-400 transition-colors">
+            <span className="text-slate-800 dark:text-slate-100 group-hover:text-brand-500 transition-colors">
               {PERSONAL_INFO.name.split(' ')[0]}
             </span>
             <span className="gradient-text font-extrabold">
@@ -74,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2 bg-slate-900/60 dark:bg-slate-900/40 p-1.5 rounded-full border border-slate-800/70 backdrop-blur-md">
+        <nav className="hidden md:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-900/60 p-1.5 rounded-full border border-slate-200 dark:border-slate-800/80 backdrop-blur-md">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -83,8 +84,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
                 href={link.href}
                 className={`px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? 'bg-brand-600/90 text-white shadow-sm shadow-brand-600/30'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                    ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800/50'
                 }`}
               >
                 {link.label}
@@ -94,31 +95,31 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
         </nav>
 
         {/* Right Action Buttons */}
-        <div className="hidden md:flex items-center gap-3">
-          {/* Resume Modal Button */}
+        <div className="hidden md:flex items-center gap-2.5">
+          {/* Download Resume Action */}
           <button
-            onClick={onOpenResume}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-medium text-slate-200 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 transition-all hover:border-brand-500/50 shadow-sm"
+            onClick={downloadResumeAsHTML}
+            title="Download formatted CV"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-medium text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/60 hover:bg-brand-100 dark:hover:bg-brand-900/60 border border-brand-200 dark:border-brand-800/80 transition-all shadow-xs"
           >
-            <FileText className="w-3.5 h-3.5 text-brand-400" />
-            <span>Resume</span>
+            <Download className="w-3.5 h-3.5 text-brand-500" />
+            <span>Download CV</span>
           </button>
 
           {/* Theme Toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
             aria-label="Toggle Theme"
-            className="p-2 rounded-full text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-700/60 border border-slate-700/50 transition-colors"
+            className="p-2 rounded-full text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-colors shadow-xs"
           >
-            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-brand-400" />}
+            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-brand-500" />}
           </button>
 
-          {/* Hire Me / Connect Button */}
+          {/* Connect Button */}
           <a
             href="#contact"
             className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 shadow-md shadow-brand-600/25 transition-all hover:scale-105 active:scale-95"
           >
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Let's Talk</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
@@ -128,13 +129,13 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-lg text-slate-300 bg-slate-900/80 border border-slate-800"
+            className="p-2 rounded-xl text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
           >
-            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-brand-400" />}
+            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-brand-500" />}
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-slate-300 bg-slate-900/80 border border-slate-800 hover:text-white"
+            className="p-2 rounded-xl text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
             aria-label="Open navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -144,7 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
 
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 mx-4 p-4 rounded-2xl bg-slate-950/95 border border-slate-800/90 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden mt-2 mx-4 p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 shadow-2xl backdrop-blur-xl">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
@@ -154,29 +155,40 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
                 className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                   activeSection === link.id
                     ? 'bg-brand-600 text-white font-semibold'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-900'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
                 {link.label}
               </a>
             ))}
-            <hr className="border-slate-800 my-2" />
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenResume();
-              }}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-medium bg-slate-900 border border-slate-800 text-slate-200 hover:text-white"
-            >
-              <FileText className="w-4 h-4 text-brand-400" />
-              <span>View Full Resume</span>
-            </button>
+            <hr className="border-slate-200 dark:border-slate-800 my-1" />
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenResume();
+                }}
+                className="py-2.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 flex items-center justify-center gap-1"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span>Resume</span>
+              </button>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  downloadResumeAsHTML();
+                }}
+                className="py-2.5 rounded-xl text-xs font-semibold bg-brand-50 dark:bg-brand-950 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-300 flex items-center justify-center gap-1"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Download CV</span>
+              </button>
+            </div>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-brand-600 to-indigo-600 text-white shadow-md shadow-brand-600/30"
             >
-              <Sparkles className="w-4 h-4" />
               <span>Get In Touch</span>
             </a>
           </div>
@@ -185,3 +197,5 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
     </header>
   );
 };
+
+
