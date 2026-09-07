@@ -1,13 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { 
-  FolderGit2, 
-  ArrowUpRight, 
-  Search, 
-  Info
-} from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
 import type { Project } from '../types/portfolio';
 import { ProjectModal } from './ProjectModal';
+import { MaterialIcon } from './MaterialIcon';
 
 export const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -43,11 +38,11 @@ export const Projects: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-pink-100/80 dark:bg-pink-950/70 border border-pink-300 dark:border-pink-500/30 text-pink-700 dark:text-pink-300 text-xs font-semibold uppercase tracking-wider mb-3">
-            <FolderGit2 className="w-3.5 h-3.5 text-pink-500" />
+            <MaterialIcon name="folder_code" className="text-[17px] text-roseBrand-500" />
             <span>Featured Portfolio</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
-            Crafted <span className="gradient-text">Projects & Systems</span> 💖
+            Selected <span className="gradient-text">Projects & Systems</span>
           </h2>
           <p className="mt-3 text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl">
             Explore my production-grade web platforms, microservices architecture, and 4th-year AI research project.
@@ -65,7 +60,7 @@ export const Projects: React.FC = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-2xl text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                   selectedCategory === cat
-                    ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-md shadow-pink-500/30 font-semibold'
+                    ? 'bg-gradient-to-r from-roseBrand-500 to-brand-600 text-white shadow-md shadow-roseBrand-500/20 font-semibold'
                     : 'bg-white dark:bg-[#151024]/80 text-slate-600 dark:text-slate-300 hover:text-pink-600 dark:hover:text-white hover:bg-pink-50 dark:hover:bg-purple-900/40 border border-pink-200 dark:border-purple-900/50'
                 }`}
               >
@@ -76,7 +71,7 @@ export const Projects: React.FC = () => {
 
           {/* Search Input */}
           <div className="relative w-full sm:w-72">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-pink-400" />
+            <MaterialIcon name="search" className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-roseBrand-400" />
             <input
               type="text"
               placeholder="Filter tech (e.g. React, NestJS)..."
@@ -90,11 +85,11 @@ export const Projects: React.FC = () => {
 
         {/* Projects Grid */}
         {filteredProjects.length === 0 ? (
-          <div className="text-center py-16 p-8 rounded-3xl bg-white dark:bg-[#151024]/60 border border-pink-200 dark:border-purple-900">
+          <div className="text-center py-16 p-8 rounded-2xl bg-white dark:bg-[#17121d]/60 border border-roseBrand-200 dark:border-roseBrand-500/20">
             <p className="text-slate-600 dark:text-slate-400 text-sm">No projects matched your search term "{searchQuery}".</p>
             <button
               onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}
-              className="mt-4 px-4 py-2 rounded-2xl bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs font-semibold"
+              className="mt-4 px-4 py-2 rounded-2xl bg-gradient-to-r from-roseBrand-500 to-brand-600 text-white text-xs font-semibold"
             >
               Reset Filters
             </button>
@@ -106,7 +101,7 @@ export const Projects: React.FC = () => {
               return (
                 <div
                   key={project.id}
-                  className={`group relative rounded-3xl bg-white dark:bg-[#151024]/80 border ${
+                  className={`group relative rounded-2xl bg-white dark:bg-[#17121d]/80 border ${
                     isResearch 
                       ? 'border-pink-300 dark:border-pink-600/50 shadow-xl shadow-pink-500/10' 
                       : 'border-pink-200/80 dark:border-purple-900/50 hover:border-pink-400 dark:hover:border-purple-500/60'
@@ -186,9 +181,9 @@ export const Projects: React.FC = () => {
                       onClick={() => setActiveModalProject(project)}
                       className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-2xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 group-hover:text-white bg-pink-50 dark:bg-slate-800/80 group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-600 border border-pink-200 dark:border-purple-800/80 group-hover:border-transparent transition-all duration-200 shadow-sm"
                     >
-                      <Info className="w-4 h-4 text-pink-500 group-hover:text-white" />
+                      <MaterialIcon name="info" className="text-[18px] text-roseBrand-500 group-hover:text-white" />
                       <span>View Full Details & Stack</span>
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <MaterialIcon name="north_east" className="text-[18px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </button>
 
                   </div>
@@ -210,4 +205,3 @@ export const Projects: React.FC = () => {
     </section>
   );
 };
-

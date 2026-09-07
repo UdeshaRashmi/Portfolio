@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --bg-primary: #f8fafc;
-    --bg-secondary: #f1f5f9;
+    --bg-primary: #fff7fb;
+    --bg-secondary: #fdf2f8;
     --card-bg: rgba(255, 255, 255, 0.9);
     --border-color: rgba(226, 232, 240, 0.9);
     --text-primary: #0f172a;
@@ -13,9 +13,9 @@
   }
 
   .dark {
-    --bg-primary: #0a0d14;
-    --bg-secondary: #111726;
-    --card-bg: rgba(17, 23, 38, 0.85);
+    --bg-primary: #100d14;
+    --bg-secondary: #17121d;
+    --card-bg: rgba(23, 18, 29, 0.85);
     --border-color: rgba(255, 255, 255, 0.08);
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
@@ -54,7 +54,7 @@
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #f472b6 0%, #c084fc 48%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -66,8 +66,7 @@
 }
 
 .gradient-text-cyan {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  background: linear-gradient(135deg, #f472b6 0%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-

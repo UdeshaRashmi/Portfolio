@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, Layers, Cpu } from 'lucide-react';
 import type { Project } from '../types/portfolio';
+import { MaterialIcon } from './MaterialIcon';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -31,7 +31,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       <div className="fixed inset-0" onClick={onClose} />
 
       {/* Modal Content */}
-      <div className="relative w-full max-w-3xl rounded-3xl bg-white dark:bg-[#151024] border border-pink-200 dark:border-purple-800 shadow-2xl p-6 sm:p-8 z-10 my-8 overflow-hidden">
+      <div className="relative w-full max-w-3xl rounded-2xl bg-white dark:bg-[#17121d] border border-roseBrand-200 dark:border-roseBrand-500/30 shadow-2xl p-6 sm:p-8 z-10 my-8 overflow-hidden">
         
         {/* Top Glow bar */}
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600" />
@@ -42,7 +42,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           className="absolute top-5 right-5 p-2 rounded-full bg-pink-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors border border-pink-200 dark:border-slate-700"
           aria-label="Close modal"
         >
-          <X className="w-5 h-5" />
+          <MaterialIcon name="close" className="text-[22px]" />
         </button>
 
         {/* Header Section */}
@@ -71,7 +71,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Overview */}
         <div className="mb-6 p-4 rounded-2xl bg-pink-50/60 dark:bg-slate-900/60 border border-pink-200/60 dark:border-purple-900/40">
           <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-pink-600 dark:text-pink-400 mb-2 flex items-center gap-1.5">
-            <Layers className="w-3.5 h-3.5 text-pink-500" />
+            <MaterialIcon name="layers" className="text-[17px] text-roseBrand-500" />
             <span>Project Overview</span>
           </h4>
           <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -82,13 +82,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* In-depth Engineering Highlights */}
         <div className="mb-6 space-y-3">
           <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-purple-600 dark:text-purple-400 flex items-center gap-1.5">
-            <Cpu className="w-3.5 h-3.5 text-purple-500" />
+            <MaterialIcon name="memory" className="text-[17px] text-brand-400" />
             <span>Architecture & Key Implementation Details</span>
           </h4>
           <div className="space-y-2.5">
             {project.detailedPoints.map((point, idx) => (
               <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-pink-50/40 dark:bg-slate-900/40 border border-pink-200/50 dark:border-purple-900/30">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-1 shrink-0" />
+                <MaterialIcon name="check_circle" className="text-[18px] text-emerald-500 mt-1 shrink-0" filled />
                 <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                   {point}
                 </p>
@@ -100,7 +100,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Technologies Badges */}
         <div className="mb-6">
           <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-fuchsia-600 dark:text-fuchsia-400 mb-3 flex items-center gap-1.5">
-            <Layers className="w-3.5 h-3.5 text-fuchsia-500" />
+            <MaterialIcon name="layers" className="text-[17px] text-fuchsia-500" />
             <span>Technologies & Tools Applied</span>
           </h4>
           <div className="flex flex-wrap gap-2">
@@ -142,4 +142,3 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     </div>
   );
 };
-

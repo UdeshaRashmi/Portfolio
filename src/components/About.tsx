@@ -1,39 +1,11 @@
-import React, { useState, useRef } from 'react';
-import { 
-  GraduationCap, 
-  Code, 
-  Layers, 
-  Users, 
-  BrainCircuit, 
-  CheckCircle, 
-  BookOpen,
-  Calendar,
-  Camera,
-  Upload
-} from 'lucide-react';
+import React from 'react';
 import { EDUCATION_DATA, PERSONAL_INFO } from '../data/portfolioData';
+import { MaterialIcon } from './MaterialIcon';
 
 export const About: React.FC = () => {
-  // Photo state with fallback
-  const [profileImg, setProfileImg] = useState<string>("/profile.svg");
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target?.result) {
-          setProfileImg(event.target.result as string);
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const pillars = [
     {
-      icon: Code,
+      icon: "code",
       title: "Frontend Craftsmanship",
       description: "Building responsive, pixel-perfect, accessible, and fast web UIs using React, Next.js, TypeScript, and modern CSS systems.",
       color: "from-brand-500/10 to-indigo-500/5 dark:from-brand-500/20 dark:to-indigo-500/5",
@@ -41,7 +13,7 @@ export const About: React.FC = () => {
       iconColor: "text-brand-500"
     },
     {
-      icon: Layers,
+      icon: "layers",
       title: "Full-Stack & Microservices",
       description: "Developing robust backend APIs, JWT-secured endpoints, Prisma/PostgreSQL or MongoDB databases, and decoupled microservices.",
       color: "from-cyan-500/10 to-blue-500/5 dark:from-cyan-500/20 dark:to-blue-500/5",
@@ -49,7 +21,7 @@ export const About: React.FC = () => {
       iconColor: "text-cyan-500"
     },
     {
-      icon: BrainCircuit,
+      icon: "psychology",
       title: "Applied AI & GIS Integration",
       description: "Integrating ML models (Python, Scikit-learn) and interactive Leaflet GIS maps for real-world disaster relief and data-driven solutions.",
       color: "from-purple-500/10 to-pink-500/5 dark:from-purple-500/20 dark:to-pink-500/5",
@@ -57,7 +29,7 @@ export const About: React.FC = () => {
       iconColor: "text-purple-500"
     },
     {
-      icon: Users,
+      icon: "groups",
       title: "Agile & Team Collaboration",
       description: "Experienced in Scrum sprints, Git/GitHub version control, modular code design, Swagger API contracts, and cross-functional teamwork.",
       color: "from-emerald-500/10 to-teal-500/5 dark:from-emerald-500/20 dark:to-teal-500/5",
@@ -70,15 +42,6 @@ export const About: React.FC = () => {
     <section id="about" className="py-20 md:py-28 relative">
       {/* Background Glow */}
       <div className="absolute top-1/2 right-0 w-[450px] h-[450px] bg-brand-600/10 rounded-full blur-[130px] pointer-events-none -z-10" />
-
-      {/* Hidden File Input for Image Upload */}
-      <input 
-        type="file" 
-        ref={fileInputRef} 
-        onChange={handlePhotoUpload} 
-        accept="image/*" 
-        className="hidden" 
-      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -99,38 +62,17 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-16">
           
           {/* Photo Card (Col 4) */}
-          <div className="lg:col-span-4 flex flex-col items-center justify-between p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#111726]/80 border border-slate-200 dark:border-slate-800 shadow-md">
+          <div className="lg:col-span-4 flex flex-col items-center justify-between p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-100 dark:border-roseBrand-500/20 shadow-md">
             
             {/* Image Container with Glow */}
-            <div className="relative group w-full flex flex-col items-center">
+            <div className="relative w-full flex flex-col items-center">
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-brand-500/40 shadow-lg bg-slate-900">
                 <img
-                  src={profileImg}
+                  src="/images/image.png"
                   alt={PERSONAL_INFO.name}
                   className="w-full h-full object-cover"
                 />
-
-                {/* Hover overlay to change photo */}
-                <button
-                  onClick={() => fileInputRef.current?.click()}
-                  title="Upload / Change profile photo"
-                  className="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white gap-2 cursor-pointer"
-                >
-                  <Camera className="w-7 h-7 text-brand-400" />
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-brand-600 text-white">
-                    Upload Photo
-                  </span>
-                </button>
               </div>
-
-              {/* Upload Button below image */}
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                className="mt-4 flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-medium text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/60 hover:bg-brand-100 dark:hover:bg-brand-900/60 border border-brand-200 dark:border-brand-800 transition-colors cursor-pointer"
-              >
-                <Upload className="w-3.5 h-3.5" />
-                <span>Upload Custom Photo</span>
-              </button>
             </div>
 
             {/* Quick Profile Bio strip */}
@@ -149,7 +91,7 @@ export const About: React.FC = () => {
           </div>
 
           {/* Bio & Story Card (Col 8) */}
-          <div className="lg:col-span-8 flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#111726]/80 border border-slate-200 dark:border-slate-800 shadow-md">
+          <div className="lg:col-span-8 flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-100 dark:border-roseBrand-500/20 shadow-md">
             <div>
               <div className="flex items-center justify-between gap-3 mb-4">
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 dark:text-white">
@@ -175,19 +117,19 @@ export const About: React.FC = () => {
               {/* Quick Checklist */}
               <div className="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-brand-500 shrink-0" />
+                  <MaterialIcon name="check_circle" className="text-[18px] text-roseBrand-500 shrink-0" filled />
                   <span>React.js & Next.js Ecosystem</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-brand-500 shrink-0" />
+                  <MaterialIcon name="check_circle" className="text-[18px] text-roseBrand-500 shrink-0" filled />
                   <span>TypeScript & Component Architecture</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-brand-500 shrink-0" />
+                  <MaterialIcon name="check_circle" className="text-[18px] text-roseBrand-500 shrink-0" filled />
                   <span>RESTful APIs & Microservices</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-brand-500 shrink-0" />
+                  <MaterialIcon name="check_circle" className="text-[18px] text-roseBrand-500 shrink-0" filled />
                   <span>Agile / Scrum Sprint Experience</span>
                 </div>
               </div>
@@ -195,7 +137,7 @@ export const About: React.FC = () => {
 
             {/* Seeking Opportunities Strip */}
             <div className="mt-6 p-4 rounded-2xl bg-brand-50/70 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-800/40 flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping shrink-0" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
               <p className="text-xs text-slate-700 dark:text-slate-300 font-medium">
                 <strong className="text-slate-900 dark:text-white">Seeking Opportunities:</strong> Open to Associate Software Engineer, Frontend, and Full-Stack development roles.
               </p>
@@ -206,11 +148,11 @@ export const About: React.FC = () => {
         </div>
 
         {/* Education at SLIIT Details Box */}
-        <div className="mb-16 p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#111726]/80 border border-slate-200 dark:border-slate-800 shadow-md">
+        <div className="mb-16 p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-100 dark:border-roseBrand-500/20 shadow-md">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
             <div className="flex items-center gap-3.5">
               <div className="w-12 h-12 rounded-2xl bg-brand-100 dark:bg-brand-950/80 border border-brand-200 dark:border-brand-800 flex items-center justify-center text-brand-600 dark:text-brand-400 shadow-xs">
-                <GraduationCap className="w-6 h-6" />
+                <MaterialIcon name="school" className="text-[28px]" />
               </div>
               <div>
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">
@@ -224,7 +166,7 @@ export const About: React.FC = () => {
 
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono font-medium">
-                <Calendar className="w-3.5 h-3.5 text-brand-500" />
+                <MaterialIcon name="calendar_month" className="text-[17px] text-roseBrand-500" />
                 {EDUCATION_DATA.period}
               </span>
               <span className="text-xs px-3 py-1 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400 font-semibold">
@@ -236,7 +178,7 @@ export const About: React.FC = () => {
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
             {EDUCATION_DATA.highlights.map((highlight, idx) => (
               <div key={idx} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 flex items-start gap-2.5">
-                <BookOpen className="w-4 h-4 text-brand-500 mt-0.5 shrink-0" />
+                <MaterialIcon name="menu_book" className="text-[18px] text-roseBrand-500 mt-0.5 shrink-0" />
                 <span>{highlight}</span>
               </div>
             ))}
@@ -246,14 +188,13 @@ export const About: React.FC = () => {
         {/* 4 Pillars of Excellence */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, idx) => {
-            const IconComponent = pillar.icon;
             return (
               <div
                 key={idx}
-                className={`p-6 rounded-3xl bg-gradient-to-b ${pillar.color} bg-white dark:bg-[#111726]/60 border ${pillar.border} transition-all duration-300 hover:-translate-y-1.5 shadow-xs hover:shadow-md group`}
+                className={`p-6 rounded-2xl bg-gradient-to-b ${pillar.color} bg-white dark:bg-[#17121d]/60 border ${pillar.border} transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md group`}
               >
                 <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <IconComponent className={`w-6 h-6 ${pillar.iconColor}`} />
+                  <MaterialIcon name={pillar.icon} className={`text-[28px] ${pillar.iconColor}`} />
                 </div>
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-300 transition-colors">
                   {pillar.title}
@@ -270,4 +211,3 @@ export const About: React.FC = () => {
     </section>
   );
 };
-

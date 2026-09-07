@@ -1,7 +1,6 @@
 import React from 'react';
-import { ArrowUp, Mail } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { MaterialIcon } from './MaterialIcon';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -17,7 +16,7 @@ export const Footer: React.FC = () => {
           {/* Brand & Tagline */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2.5 mb-2">
-              <span className="w-8 h-8 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-white font-mono font-bold text-sm">
+              <span className="w-8 h-8 rounded-xl bg-gradient-to-tr from-roseBrand-500 to-brand-600 flex items-center justify-center text-white font-mono font-bold text-sm">
                 UR
               </span>
               <span className="text-xl font-display font-bold text-white">
@@ -48,7 +47,7 @@ export const Footer: React.FC = () => {
               aria-label="GitHub Profile"
               className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-brand-500/50 transition-colors"
             >
-              <GithubIcon className="w-4 h-4" />
+              <MaterialIcon name="code" className="text-[18px]" />
             </a>
             <a
               href={PERSONAL_INFO.socials.linkedin}
@@ -57,21 +56,21 @@ export const Footer: React.FC = () => {
               aria-label="LinkedIn Profile"
               className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-cyan-500/50 transition-colors"
             >
-              <LinkedinIcon className="w-4 h-4" />
+              <MaterialIcon name="work" className="text-[18px]" />
             </a>
             <a
               href={PERSONAL_INFO.socials.email}
               aria-label="Email"
               className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-rose-500/50 transition-colors"
             >
-              <Mail className="w-4 h-4" />
+              <MaterialIcon name="mail" className="text-[18px]" />
             </a>
             <button
               onClick={scrollToTop}
               aria-label="Back to Top"
               className="p-2.5 rounded-xl bg-brand-900/60 border border-brand-500/40 text-brand-300 hover:text-white hover:bg-brand-600 transition-all hover:scale-105"
             >
-              <ArrowUp className="w-4 h-4" />
+              <MaterialIcon name="keyboard_arrow_up" className="text-[20px]" />
             </button>
           </div>
 

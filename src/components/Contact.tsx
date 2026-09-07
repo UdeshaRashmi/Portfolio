@@ -1,19 +1,6 @@
 import React, { useState } from 'react';
-import { 
-  Mail, 
-  Send, 
-  Copy, 
-  Check, 
-  Sparkles, 
-  MapPin, 
-  MessageSquare, 
-  CheckCircle2,
-  ArrowUpRight,
-  Heart
-} from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './Icons';
-import confetti from 'canvas-confetti';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { MaterialIcon } from './MaterialIcon';
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -38,12 +25,6 @@ export const Contact: React.FC = () => {
     setStatus('submitting');
     setTimeout(() => {
       setStatus('success');
-      confetti({
-        particleCount: 100,
-        spread: 80,
-        origin: { y: 0.6 },
-        colors: ['#f472b6', '#c084fc', '#38bdf8', '#fb7185', '#ec4899']
-      });
       setFormState({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
     }, 900);
@@ -59,11 +40,11 @@ export const Contact: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-pink-100/80 dark:bg-pink-950/70 border border-pink-300 dark:border-pink-500/30 text-pink-700 dark:text-pink-300 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Mail className="w-3.5 h-3.5 text-pink-500" />
+            <MaterialIcon name="mail" className="text-[17px] text-roseBrand-500" />
             <span>Let's Connect</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
-            Get In <span className="gradient-text">Touch</span> 💌
+            Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="mt-3 text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl">
             Currently open to Associate Software Engineer, Frontend, and Full-Stack opportunities. Let's create something wonderful together!
@@ -77,9 +58,9 @@ export const Contact: React.FC = () => {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Quick Email Card */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#151024]/80 border border-pink-200/80 dark:border-purple-900/50 backdrop-blur-md shadow-xl">
+            <div className="p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-200/80 dark:border-roseBrand-500/20 backdrop-blur-md shadow-xl">
               <h3 className="text-lg font-display font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-pink-500" />
+                <MaterialIcon name="alternate_email" className="text-[19px] text-roseBrand-500" />
                 <span>Direct Contact</span>
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-5 leading-relaxed">
@@ -89,7 +70,7 @@ export const Contact: React.FC = () => {
               {/* Copy Email Box */}
               <div className="flex items-center justify-between p-3 rounded-2xl bg-pink-50/80 dark:bg-slate-950/80 border border-pink-200 dark:border-purple-900 mb-4">
                 <div className="flex items-center gap-2.5 overflow-hidden">
-                  <Mail className="w-4 h-4 text-pink-500 shrink-0" />
+                  <MaterialIcon name="mail" className="text-[18px] text-roseBrand-500 shrink-0" />
                   <span className="text-xs sm:text-sm font-mono text-slate-800 dark:text-slate-200 truncate font-semibold">
                     {PERSONAL_INFO.email}
                   </span>
@@ -100,12 +81,12 @@ export const Contact: React.FC = () => {
                 >
                   {copied ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-500" />
+                      <MaterialIcon name="check" className="text-[17px] text-emerald-500" />
                       <span className="text-emerald-500">Copied!</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-3.5 h-3.5 text-slate-500" />
+                      <MaterialIcon name="content_copy" className="text-[17px] text-slate-500" />
                       <span>Copy</span>
                     </>
                   )}
@@ -117,9 +98,9 @@ export const Contact: React.FC = () => {
                 href={PERSONAL_INFO.socials.email}
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 shadow-md shadow-pink-500/30 transition-all hover:scale-[1.02]"
               >
-                <Mail className="w-4 h-4" />
+                <MaterialIcon name="mail" className="text-[18px]" />
                 <span>Open in Email App</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <MaterialIcon name="north_east" className="text-[18px]" />
               </a>
             </div>
 
@@ -129,10 +110,10 @@ export const Contact: React.FC = () => {
                 href={PERSONAL_INFO.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-5 rounded-3xl bg-white dark:bg-[#151024]/80 border border-pink-200/80 dark:border-purple-900/50 hover:border-purple-400 dark:hover:border-purple-500 transition-all group backdrop-blur-md shadow-sm"
+                className="p-5 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-200/80 dark:border-roseBrand-500/20 hover:border-purple-400 dark:hover:border-purple-500 transition-all group backdrop-blur-md shadow-sm"
               >
                 <div className="w-10 h-10 rounded-2xl bg-purple-100 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-800 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-3 group-hover:scale-110 transition-transform">
-                  <LinkedinIcon className="w-5 h-5" />
+                  <MaterialIcon name="work" className="text-[24px]" />
                 </div>
                 <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                   LinkedIn
@@ -144,10 +125,10 @@ export const Contact: React.FC = () => {
                 href={PERSONAL_INFO.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-5 rounded-3xl bg-white dark:bg-[#151024]/80 border border-pink-200/80 dark:border-purple-900/50 hover:border-pink-400 dark:hover:border-pink-500 transition-all group backdrop-blur-md shadow-sm"
+                className="p-5 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-200/80 dark:border-roseBrand-500/20 hover:border-pink-400 dark:hover:border-pink-500 transition-all group backdrop-blur-md shadow-sm"
               >
                 <div className="w-10 h-10 rounded-2xl bg-pink-100 dark:bg-pink-950/60 border border-pink-200 dark:border-pink-800 flex items-center justify-center text-pink-600 dark:text-pink-400 mb-3 group-hover:scale-110 transition-transform">
-                  <GithubIcon className="w-5 h-5" />
+                  <MaterialIcon name="code" className="text-[24px]" />
                 </div>
                 <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-300 transition-colors">
                   GitHub
@@ -157,13 +138,13 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Location & Status Card */}
-            <div className="p-5 rounded-3xl bg-white/70 dark:bg-[#151024]/40 border border-pink-200/70 dark:border-purple-900/40 flex items-center justify-between shadow-xs">
+            <div className="p-5 rounded-2xl bg-white/70 dark:bg-[#17121d]/40 border border-roseBrand-200/70 dark:border-roseBrand-500/20 flex items-center justify-between shadow-xs">
               <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-rose-500" />
+                <MaterialIcon name="location_on" className="text-[18px] text-rose-500" />
                 <span className="text-xs text-slate-700 dark:text-slate-300 font-medium">{PERSONAL_INFO.location}</span>
               </div>
               <span className="inline-flex items-center gap-1.5 text-xs text-pink-600 dark:text-pink-400 font-bold">
-                <Heart className="w-3.5 h-3.5 fill-current text-pink-500 animate-pulse" />
+                <MaterialIcon name="check_circle" className="text-[17px] text-roseBrand-500" filled />
                 Immediate Availability
               </span>
             </div>
@@ -172,10 +153,10 @@ export const Contact: React.FC = () => {
 
           {/* Right Column: Interactive Contact Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#151024]/90 border border-pink-200/90 dark:border-purple-900/60 backdrop-blur-md shadow-2xl relative overflow-hidden">
+            <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#17121d]/90 border border-roseBrand-200/90 dark:border-roseBrand-500/20 backdrop-blur-md shadow-2xl relative overflow-hidden">
               
               <h3 className="text-xl font-display font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-                <MessageSquare className="w-4 h-4 text-pink-500" />
+                <MaterialIcon name="chat" className="text-[19px] text-roseBrand-500" />
                 <span>Send a Message</span>
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6">
@@ -184,7 +165,7 @@ export const Contact: React.FC = () => {
 
               {status === 'success' && (
                 <div className="mb-6 p-4 rounded-2xl bg-pink-50 dark:bg-emerald-950/80 border border-pink-300 dark:border-emerald-500/50 text-pink-800 dark:text-emerald-200 flex items-center gap-3 animate-in fade-in">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
+                  <MaterialIcon name="check_circle" className="text-[22px] text-emerald-500 shrink-0" filled />
                   <div className="text-xs sm:text-sm">
                     <strong className="text-slate-900 dark:text-white">Message sent successfully!</strong> Thank you for reaching out, I will get back to you shortly.
                   </div>
@@ -258,8 +239,8 @@ export const Contact: React.FC = () => {
                     <span>Sending message...</span>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" />
-                      <span>Send Message 🌸</span>
+                      <MaterialIcon name="send" className="text-[18px]" />
+                      <span>Send Message</span>
                     </>
                   )}
                 </button>
@@ -274,4 +255,3 @@ export const Contact: React.FC = () => {
     </section>
   );
 };
-

@@ -1,24 +1,15 @@
 import React from 'react';
-import { 
-  Award, 
-  BrainCircuit, 
-  Terminal, 
-  Layout, 
-  Palette, 
-  Briefcase, 
-  CalendarCheck,
-  ShieldCheck
-} from 'lucide-react';
 import { CERTIFICATES } from '../data/portfolioData';
+import { MaterialIcon } from './MaterialIcon';
 
 export const Certificates: React.FC = () => {
-  const iconMap: Record<string, React.ElementType> = {
-    BrainCircuit,
-    Terminal,
-    Layout,
-    Palette,
-    Briefcase,
-    CalendarCheck,
+  const iconMap: Record<string, string> = {
+    BrainCircuit: 'psychology',
+    Terminal: 'terminal',
+    Layout: 'dashboard_customize',
+    Palette: 'palette',
+    Briefcase: 'business_center',
+    CalendarCheck: 'event_available',
   };
 
   return (
@@ -31,11 +22,11 @@ export const Certificates: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-pink-100/80 dark:bg-pink-950/70 border border-pink-300 dark:border-pink-500/30 text-pink-700 dark:text-pink-300 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Award className="w-3.5 h-3.5 text-pink-500" />
+            <MaterialIcon name="workspace_premium" className="text-[17px] text-roseBrand-500" />
             <span>Accreditations & Continuous Learning</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
-            Verified <span className="gradient-text">Certificates</span> 📜
+            Verified <span className="gradient-text">Certificates</span>
           </h2>
           <p className="mt-3 text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl">
             Formal certifications earned from premier Sri Lankan universities and institutions in AI, Web Engineering, and Project Management.
@@ -45,12 +36,12 @@ export const Certificates: React.FC = () => {
         {/* Certificates Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {CERTIFICATES.map((cert) => {
-            const IconComponent = iconMap[cert.iconName] || Award;
+            const iconName = iconMap[cert.iconName] || 'workspace_premium';
 
             return (
               <div
                 key={cert.id}
-                className="group relative p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#151024]/80 border border-pink-200/80 dark:border-purple-900/50 hover:border-pink-400 dark:hover:border-purple-500/60 backdrop-blur-md shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden"
+                className="group relative p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-200/80 dark:border-roseBrand-500/20 hover:border-roseBrand-400 dark:hover:border-roseBrand-400/50 backdrop-blur-md shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden"
               >
                 {/* Top color gradient bar */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${cert.badgeColor}`} />
@@ -60,11 +51,11 @@ export const Certificates: React.FC = () => {
                   {/* Top Row: Icon and Verified Badge */}
                   <div className="flex items-center justify-between gap-3 mb-4">
                     <div className="w-12 h-12 rounded-2xl bg-pink-50 dark:bg-slate-800/90 border border-pink-200 dark:border-purple-800 flex items-center justify-center text-pink-600 dark:text-pink-400 group-hover:scale-110 transition-transform shadow-xs">
-                      <IconComponent className="w-6 h-6" />
+                      <MaterialIcon name={iconName} className="text-[28px]" />
                     </div>
 
                     <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-800/60">
-                      <ShieldCheck className="w-3.5 h-3.5" />
+                      <MaterialIcon name="verified" className="text-[17px]" filled />
                       <span>Verified</span>
                     </span>
                   </div>
@@ -107,4 +98,3 @@ export const Certificates: React.FC = () => {
     </section>
   );
 };
-
