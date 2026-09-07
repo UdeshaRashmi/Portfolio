@@ -35,6 +35,16 @@ export interface Education {
   highlights: string[];
 }
 
+export interface EducationEntry {
+  id: string;
+  institution: string;
+  title: string;
+  period?: string;
+  description?: string;
+  type: 'Degree' | 'Diploma' | 'Certificate' | 'School';
+  iconName: string;
+}
+
 export interface SkillCategory {
   title: string;
   iconName: string;
@@ -49,6 +59,8 @@ export interface Certificate {
   id: string;
   title: string;
   issuer: string;
+  issued?: string;
+  credentialName?: string;
   badgeColor: string;
   iconName: string;
   skills: string[];

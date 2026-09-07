@@ -1,5 +1,5 @@
 import React from 'react';
-import { EDUCATION_DATA, PERSONAL_INFO } from '../data/portfolioData';
+import { EDUCATION_DATA, EDUCATION_HISTORY, PERSONAL_INFO } from '../data/portfolioData';
 import { MaterialIcon } from './MaterialIcon';
 
 export const About: React.FC = () => {
@@ -147,7 +147,7 @@ export const About: React.FC = () => {
 
         </div>
 
-        {/* Education at SLIIT Details Box */}
+        {/* Education Details */}
         <div className="mb-16 p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-100 dark:border-roseBrand-500/20 shadow-md">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
             <div className="flex items-center gap-3.5">
@@ -159,7 +159,7 @@ export const About: React.FC = () => {
                   Higher Education
                 </span>
                 <h3 className="text-xl font-display font-bold text-slate-900 dark:text-white">
-                  {EDUCATION_DATA.institution}
+                  Education
                 </h3>
               </div>
             </div>
@@ -175,11 +175,34 @@ export const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-            {EDUCATION_DATA.highlights.map((highlight, idx) => (
-              <div key={idx} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 flex items-start gap-2.5">
-                <MaterialIcon name="menu_book" className="text-[18px] text-roseBrand-500 mt-0.5 shrink-0" />
-                <span>{highlight}</span>
+          <div className="mt-6 divide-y divide-slate-200 dark:divide-slate-800">
+            {EDUCATION_HISTORY.map((entry) => (
+              <div key={entry.id} className="flex gap-4 py-5 first:pt-0 last:pb-0">
+                <div className="mt-1 h-11 w-11 shrink-0 rounded-xl bg-cyanBrand-50 dark:bg-slate-900/80 border border-cyanBrand-200 dark:border-slate-700 flex items-center justify-center text-brand-600 dark:text-cyanBrand-300">
+                  <MaterialIcon name={entry.iconName} className="text-[24px]" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                    <div>
+                      <h4 className="text-base font-display font-bold text-slate-900 dark:text-white">
+                        {entry.institution}
+                      </h4>
+                      <p className="text-sm text-slate-700 dark:text-slate-300">
+                        {entry.title}
+                      </p>
+                    </div>
+                    {entry.period && (
+                      <span className="text-xs font-mono text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                        {entry.period}
+                      </span>
+                    )}
+                  </div>
+                  {entry.description && (
+                    <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {entry.description}
+                    </p>
+                  )}
+                </div>
               </div>
             ))}
           </div>

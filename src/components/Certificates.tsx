@@ -2,98 +2,96 @@ import React from 'react';
 import { CERTIFICATES } from '../data/portfolioData';
 import { MaterialIcon } from './MaterialIcon';
 
-export const Certificates: React.FC = () => {
-  const iconMap: Record<string, string> = {
-    BrainCircuit: 'psychology',
-    Terminal: 'terminal',
-    Layout: 'dashboard_customize',
-    Palette: 'palette',
-    Briefcase: 'business_center',
-    CalendarCheck: 'event_available',
-  };
+const iconMap: Record<string, string> = {
+  BrainCircuit: 'psychology',
+  Terminal: 'terminal',
+  Layout: 'dashboard_customize',
+  Palette: 'palette',
+  Briefcase: 'business_center',
+  CalendarCheck: 'event_available',
+  Cloud: 'cloud',
+};
 
+export const Certificates: React.FC = () => {
   return (
     <section id="certificates" className="py-20 md:py-28 relative">
-      {/* Background Glow */}
-      <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-pink-600/10 rounded-full blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-cyanBrand-500/10 rounded-full blur-[130px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-pink-100/80 dark:bg-pink-950/70 border border-pink-300 dark:border-pink-500/30 text-pink-700 dark:text-pink-300 text-xs font-semibold uppercase tracking-wider mb-3">
-            <MaterialIcon name="workspace_premium" className="text-[17px] text-roseBrand-500" />
-            <span>Accreditations & Continuous Learning</span>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-cyanBrand-50 dark:bg-brand-950/70 border border-cyanBrand-200 dark:border-brand-500/30 text-brand-700 dark:text-brand-300 text-xs font-semibold uppercase tracking-wider mb-3">
+            <MaterialIcon name="workspace_premium" className="text-[17px] text-cyanBrand-500" />
+            <span>Professional Credentials</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
-            Verified <span className="gradient-text">Certificates</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
+            Licenses & <span className="gradient-text">Certifications</span> ({CERTIFICATES.length})
           </h2>
-          <p className="mt-3 text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl">
-            Formal certifications earned from premier Sri Lankan universities and institutions in AI, Web Engineering, and Project Management.
-          </p>
         </div>
 
-        {/* Certificates Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {CERTIFICATES.map((cert) => {
+        <div className="rounded-2xl bg-white dark:bg-[#17121d]/80 border border-cyanBrand-200/70 dark:border-cyanBrand-500/20 shadow-sm overflow-hidden">
+          {CERTIFICATES.map((cert, index) => {
             const iconName = iconMap[cert.iconName] || 'workspace_premium';
+            const isAws = cert.issuer.includes('Amazon Web Services');
 
             return (
-              <div
+              <article
                 key={cert.id}
-                className="group relative p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#17121d]/80 border border-roseBrand-200/80 dark:border-roseBrand-500/20 hover:border-roseBrand-400 dark:hover:border-roseBrand-400/50 backdrop-blur-md shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden"
+                className={`p-5 sm:p-6 ${index > 0 ? 'border-t border-slate-200 dark:border-slate-800' : ''}`}
               >
-                {/* Top color gradient bar */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${cert.badgeColor}`} />
+                <div className="flex items-start gap-4">
+                  <div className={`h-12 w-12 shrink-0 rounded ${isAws ? 'bg-slate-900 text-white' : 'bg-cyanBrand-50 dark:bg-slate-900 text-brand-600 dark:text-cyanBrand-300 border border-cyanBrand-200 dark:border-slate-700'} flex items-center justify-center`}>
+                    {isAws ? (
+                      <span className="text-lg font-bold tracking-tight">aws</span>
+                    ) : (
+                      <MaterialIcon name={iconName} className="text-[27px]" />
+                    )}
+                  </div>
 
-                <div>
-                  
-                  {/* Top Row: Icon and Verified Badge */}
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-pink-50 dark:bg-slate-800/90 border border-pink-200 dark:border-purple-800 flex items-center justify-center text-pink-600 dark:text-pink-400 group-hover:scale-110 transition-transform shadow-xs">
-                      <MaterialIcon name={iconName} className="text-[28px]" />
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">
+                      {cert.title}
+                    </h3>
+                    <p className="mt-0.5 text-sm text-slate-700 dark:text-slate-300">
+                      {cert.issuer}
+                    </p>
+                    {cert.issued && (
+                      <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">
+                        {cert.issued}
+                      </p>
+                    )}
+
+                    {cert.credentialName && (
+                      <div className="mt-5 flex items-center gap-4">
+                        <div className="h-14 w-28 shrink-0 rounded-lg border border-cyanBrand-200 dark:border-slate-700 bg-gradient-to-br from-white to-cyanBrand-50 dark:from-slate-900 dark:to-slate-800 p-2 shadow-xs">
+                          <div className="h-1.5 w-12 rounded bg-cyanBrand-300" />
+                          <div className="mt-2 h-1 w-16 rounded bg-slate-300 dark:bg-slate-600" />
+                          <div className="mt-1 h-1 w-10 rounded bg-slate-200 dark:bg-slate-700" />
+                          <div className="mt-3 text-right text-[9px] font-bold text-slate-900 dark:text-white">
+                            aws
+                          </div>
+                        </div>
+                        <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                          {cert.credentialName}
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="mt-4 flex flex-wrap gap-1.5">
+                      {cert.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-2.5 py-0.5 rounded-lg text-[11px] font-medium bg-cyanBrand-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-cyanBrand-200/70 dark:border-slate-700"
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
-
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-800/60">
-                      <MaterialIcon name="verified" className="text-[17px]" filled />
-                      <span>Verified</span>
-                    </span>
-                  </div>
-
-                  {/* Title & Issuer */}
-                  <h3 className="text-lg font-display font-bold text-slate-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-300 transition-colors mb-2">
-                    {cert.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 mb-4 flex items-center gap-1.5">
-                    <span className="text-slate-400">Issuer:</span>
-                    <span className="text-purple-600 dark:text-pink-300 font-semibold">{cert.issuer}</span>
-                  </p>
-
-                </div>
-
-                {/* Bottom Skills */}
-                <div className="pt-4 border-t border-pink-100 dark:border-purple-900/40">
-                  <p className="text-[11px] font-mono text-slate-400 dark:text-slate-400 uppercase tracking-wider mb-2">
-                    Key Competencies
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {cert.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="px-2.5 py-0.5 rounded-lg text-[11px] font-medium bg-pink-50 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300 border border-pink-200 dark:border-purple-800/50"
-                      >
-                        {skill}
-                      </span>
-                    ))}
                   </div>
                 </div>
-
-              </div>
+              </article>
             );
           })}
         </div>
-
       </div>
     </section>
   );

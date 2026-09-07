@@ -1,4 +1,4 @@
-import type { Project, Experience, Education, SkillCategory, Certificate } from '../types/portfolio';
+import type { Project, Experience, Education, EducationEntry, SkillCategory, Certificate } from '../types/portfolio';
 
 export const PERSONAL_INFO = {
   name: "Udesha Rashmi",
@@ -61,6 +61,56 @@ export const EDUCATION_DATA: Education = {
     "Comprehensive coursework in Data Structures & Algorithms, Object-Oriented Programming, Database Management, and Microservice Architectures."
   ]
 };
+
+export const EDUCATION_HISTORY: EducationEntry[] = [
+  {
+    id: "sliit-bsc-it",
+    institution: "SLIIT",
+    title: "Bachelor of Science (Hons) in Information Technology",
+    period: "Jan 2023 - Dec 2026",
+    type: "Degree",
+    iconName: "school"
+  },
+  {
+    id: "sliit-hnd-it",
+    institution: "SLIIT",
+    title: "Higher National Diploma in Information Technology",
+    period: "Jan 2023 - Dec 2024",
+    type: "Diploma",
+    iconName: "workspace_premium"
+  },
+  {
+    id: "uom-full-stack",
+    institution: "University of Moratuwa",
+    title: "Full Stack Developer Certificate Course, Full Stack Development",
+    period: "Apr 2025 - Present",
+    type: "Certificate",
+    iconName: "terminal"
+  },
+  {
+    id: "british-council-english",
+    institution: "British Council Sri Lanka",
+    title: "Certificate course, English Language and Literature, General",
+    type: "Certificate",
+    iconName: "language"
+  },
+  {
+    id: "hungama-wijayaba",
+    institution: "Hungama Wijayaba National School",
+    title: "Ordinary Level and Advanced Level Education",
+    description: "I successfully completed my Ordinary Level (O/L) examination in English medium, achieving grades A8 and C1, and went on to complete my Advanced Level (A/L) examinations in the Biological Stream, passing Biology, Chemistry, and Physics. I am proud to have passed both O/L and A/L examinations, which laid a strong academic foundation for my higher education and professional development.",
+    type: "School",
+    iconName: "history_edu"
+  },
+  {
+    id: "ambalantota-maha-vidyalaya",
+    institution: "H/Ambalantota Maha Vidyalaya",
+    title: "Primary Education",
+    description: "During my primary education, I studied at H/Ambalantota Maha Vidyalaya, where I built the early learning foundation that supported my academic journey.",
+    type: "School",
+    iconName: "school"
+  }
+];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
@@ -253,6 +303,26 @@ export const PROJECTS: Project[] = [
 ];
 
 export const CERTIFICATES: Certificate[] = [
+  {
+    id: "aws-highly-available-web-applications",
+    title: "Highly Available Web Applications",
+    issuer: "Amazon Web Services (AWS)",
+    issued: "Issued Aug 2026",
+    credentialName: "AWS SimuLearn: Highly Available Web Applications",
+    badgeColor: "from-blue-500 to-cyan-600",
+    iconName: "Cloud",
+    skills: ["AWS", "High Availability", "Cloud Architecture", "Web Applications"]
+  },
+  {
+    id: "aws-networking-concepts",
+    title: "Networking Concepts",
+    issuer: "Amazon Web Services (AWS)",
+    issued: "Issued Aug 2026",
+    credentialName: "AWS SimuLearn: Networking Concepts",
+    badgeColor: "from-blue-500 to-indigo-600",
+    iconName: "Cloud",
+    skills: ["AWS", "Networking", "Cloud Infrastructure", "VPC Fundamentals"]
+  },
   {
     id: "ai-ml-engineer-sliit",
     title: "AI/ML Engineer - Stage 1",

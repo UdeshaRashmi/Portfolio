@@ -1,6 +1,7 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { MaterialIcon } from './MaterialIcon';
+import { GraduateLogo } from './GraduateLogo';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -16,9 +17,7 @@ export const Footer: React.FC = () => {
           {/* Brand & Tagline */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2.5 mb-2">
-              <span className="w-8 h-8 rounded-xl bg-gradient-to-tr from-roseBrand-500 to-brand-600 flex items-center justify-center text-white font-mono font-bold text-sm">
-                UR
-              </span>
+              <GraduateLogo className="h-9 w-9 shrink-0" />
               <span className="text-xl font-display font-bold text-white">
                 {PERSONAL_INFO.name}
               </span>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { downloadResumeAsHTML } from '../utils/downloadResume';
 import { MaterialIcon } from './MaterialIcon';
+import { GraduateLogo } from './GraduateLogo';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -61,14 +62,12 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
           href="#hero"
           className="group flex items-center gap-2.5 text-lg sm:text-xl font-display font-bold tracking-tight text-slate-900 dark:text-white focus:outline-none"
         >
-          <span className="w-9 h-9 rounded-xl bg-gradient-to-tr from-roseBrand-500 to-brand-600 flex items-center justify-center text-white font-mono font-bold shadow-md shadow-roseBrand-500/20 group-hover:scale-105 transition-transform text-sm">
-            UR
-          </span>
-          <span className="flex items-center gap-1">
-            <span className="text-slate-800 dark:text-slate-100 group-hover:text-brand-500 transition-colors">
+          <GraduateLogo className="h-11 w-11 shrink-0 drop-shadow-[0_10px_20px_rgba(56,189,248,0.22)] transition-transform group-hover:scale-105" />
+          <span className="flex items-baseline gap-1.5">
+            <span className="text-slate-800 dark:text-slate-100 group-hover:text-cyanBrand-300 transition-colors">
               {PERSONAL_INFO.name.split(' ')[0]}
             </span>
-            <span className="gradient-text font-extrabold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyanBrand-400 via-brand-400 to-indigo-400 font-extrabold">
               {PERSONAL_INFO.name.split(' ')[1]}
             </span>
           </span>
@@ -84,8 +83,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
                 href={link.href}
                 className={`px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? 'bg-roseBrand-500 text-white shadow-xs font-semibold'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-roseBrand-50 dark:hover:bg-slate-800/50'
+                    ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-cyanBrand-50 dark:hover:bg-slate-800/50'
                 }`}
               >
                 {link.label}
@@ -100,9 +99,9 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
           <button
             onClick={downloadResumeAsHTML}
             title="Download formatted CV"
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-medium text-roseBrand-700 dark:text-roseBrand-200 bg-roseBrand-50 dark:bg-roseBrand-600/10 hover:bg-roseBrand-100 dark:hover:bg-roseBrand-600/20 border border-roseBrand-200 dark:border-roseBrand-500/30 transition-all shadow-xs"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-medium text-brand-700 dark:text-brand-200 bg-cyanBrand-50 dark:bg-brand-950/60 hover:bg-cyanBrand-100 dark:hover:bg-brand-900/60 border border-cyanBrand-200 dark:border-brand-500/30 transition-all shadow-xs"
           >
-            <MaterialIcon name="download" className="text-[17px] text-roseBrand-500" />
+            <MaterialIcon name="download" className="text-[17px] text-brand-500" />
             <span>Download CV</span>
           </button>
 
@@ -112,13 +111,13 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
             aria-label="Toggle Theme"
             className="p-2 rounded-full text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-colors shadow-xs"
           >
-            <MaterialIcon name={darkMode ? 'light_mode' : 'dark_mode'} className={`text-[18px] ${darkMode ? 'text-amber-300' : 'text-roseBrand-500'}`} />
+            <MaterialIcon name={darkMode ? 'light_mode' : 'dark_mode'} className={`text-[18px] ${darkMode ? 'text-amber-300' : 'text-brand-500'}`} />
           </button>
 
           {/* Connect Button */}
           <a
             href="#contact"
-            className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-roseBrand-500 to-brand-600 hover:from-roseBrand-600 hover:to-brand-700 shadow-md shadow-roseBrand-600/20 transition-all hover:scale-105 active:scale-95"
+            className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-cyanBrand-600 hover:from-brand-500 hover:to-cyanBrand-500 shadow-md shadow-brand-600/25 transition-all hover:scale-105 active:scale-95"
           >
             <span>Let's Talk</span>
             <MaterialIcon name="north_east" className="text-[16px]" />
@@ -131,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
             onClick={() => setDarkMode(!darkMode)}
             className="p-2 rounded-xl text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
           >
-            <MaterialIcon name={darkMode ? 'light_mode' : 'dark_mode'} className={`text-[18px] ${darkMode ? 'text-amber-300' : 'text-roseBrand-500'}`} />
+            <MaterialIcon name={darkMode ? 'light_mode' : 'dark_mode'} className={`text-[18px] ${darkMode ? 'text-amber-300' : 'text-brand-500'}`} />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -154,8 +153,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
                 onClick={() => setMobileMenuOpen(false)}
                 className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                   activeSection === link.id
-                    ? 'bg-roseBrand-500 text-white font-semibold'
-                    : 'text-slate-700 dark:text-slate-300 hover:text-roseBrand-600 dark:hover:text-white hover:bg-roseBrand-50 dark:hover:bg-slate-800'
+                    ? 'bg-brand-600 text-white font-semibold'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-white hover:bg-cyanBrand-50 dark:hover:bg-slate-800'
                 }`}
               >
                 {link.label}
@@ -178,7 +177,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
                   setMobileMenuOpen(false);
                   downloadResumeAsHTML();
                 }}
-                className="py-2.5 rounded-xl text-xs font-semibold bg-roseBrand-50 dark:bg-roseBrand-600/10 border border-roseBrand-200 dark:border-roseBrand-500/30 text-roseBrand-700 dark:text-roseBrand-200 flex items-center justify-center gap-1"
+                className="py-2.5 rounded-xl text-xs font-semibold bg-cyanBrand-50 dark:bg-brand-950/60 border border-cyanBrand-200 dark:border-brand-500/30 text-brand-700 dark:text-brand-200 flex items-center justify-center gap-1"
               >
                 <MaterialIcon name="download" className="text-[17px]" />
                 <span>Download CV</span>
@@ -187,7 +186,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-roseBrand-500 to-brand-600 text-white shadow-md shadow-roseBrand-600/20"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-brand-600 to-cyanBrand-600 text-white shadow-md shadow-brand-600/25"
             >
               <span>Get In Touch</span>
             </a>
@@ -197,4 +196,3 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
     </header>
   );
 };
-

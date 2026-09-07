@@ -35,11 +35,11 @@ export function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-sage-50 dark:bg-[#100d14] text-sage-900 dark:text-slate-100 font-sans selection:bg-sage-200 dark:selection:bg-roseBrand-500/25 selection:text-sage-900 dark:selection:text-roseBrand-200 relative">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0d14] text-slate-900 dark:text-slate-100 font-sans selection:bg-cyanBrand-100 dark:selection:bg-brand-500/30 selection:text-slate-900 dark:selection:text-brand-200 relative">
       
       {/* Dynamic Background Noise / Glow Canvas */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-sage-200/70 via-sage-500/12 to-transparent dark:from-roseBrand-500/12 dark:via-brand-500/8 dark:to-transparent rounded-full blur-[160px]" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-cyanBrand-100 via-brand-500/10 to-transparent dark:from-brand-600/10 dark:via-cyanBrand-500/5 dark:to-transparent rounded-full blur-[160px]" />
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">
@@ -71,7 +71,7 @@ export function App() {
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             aria-label="Scroll to top"
-            className="p-3 rounded-full bg-sage-900/90 dark:bg-slate-900/90 border border-sage-700 dark:border-slate-700 text-sage-50 dark:text-slate-300 hover:text-white hover:bg-sage-800 dark:hover:bg-slate-800 shadow-xl backdrop-blur-md transition-all hover:scale-110"
+            className="p-3 rounded-full bg-slate-900/90 border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 shadow-xl backdrop-blur-md transition-all hover:scale-110"
           >
             <MaterialIcon name="keyboard_arrow_up" className="text-[20px]" />
           </button>
@@ -79,10 +79,10 @@ export function App() {
 
         <button
           onClick={() => setResumeModalOpen(true)}
-          className="group flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-sage-500 to-sage-700 hover:from-sage-600 hover:to-sage-800 dark:from-roseBrand-500 dark:to-brand-600 dark:hover:from-roseBrand-600 dark:hover:to-brand-700 text-white font-semibold shadow-xl shadow-sage-600/20 dark:shadow-roseBrand-600/20 backdrop-blur-md transition-all hover:scale-105 active:scale-95"
+          className="group flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-brand-600 to-cyanBrand-600 hover:from-brand-500 hover:to-cyanBrand-500 text-white font-semibold shadow-xl shadow-brand-600/25 backdrop-blur-md transition-all hover:scale-105 active:scale-95"
           aria-label="View Resume"
         >
-          <MaterialIcon name="description" className="text-[18px] text-sage-50 dark:text-roseBrand-100" />
+          <MaterialIcon name="description" className="text-[18px] text-brand-100" />
           <span className="text-xs sm:text-sm">Resume</span>
         </button>
       </div>

@@ -4,18 +4,18 @@
 
 @layer base {
   :root {
-    --bg-primary: #fff7fb;
-    --bg-secondary: #fdf2f8;
+    --bg-primary: #f8fbff;
+    --bg-secondary: #e0f2fe;
     --card-bg: rgba(255, 255, 255, 0.9);
-    --border-color: rgba(226, 232, 240, 0.9);
+    --border-color: rgba(186, 230, 253, 0.9);
     --text-primary: #0f172a;
     --text-secondary: #475569;
   }
 
   .dark {
-    --bg-primary: #100d14;
-    --bg-secondary: #17121d;
-    --card-bg: rgba(23, 18, 29, 0.85);
+    --bg-primary: #0a0d14;
+    --bg-secondary: #111726;
+    --card-bg: rgba(17, 23, 38, 0.85);
     --border-color: rgba(255, 255, 255, 0.08);
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
@@ -54,19 +54,285 @@
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #f472b6 0%, #c084fc 48%, #818cf8 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 48%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 50%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-alt {
-  background: linear-gradient(135deg, #f43f5e 0%, #ec4899 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-cyan {
-  background: linear-gradient(135deg, #f472b6 0%, #818cf8 100%);
+  background: linear-gradient(135deg, #0891b2 0%, #6366f1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.dark .gradient-text-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-pink-50,
+.bg-pink-50\/40,
+.bg-pink-50\/50,
+.bg-pink-50\/60,
+.bg-pink-50\/70,
+.bg-pink-50\/80,
+.bg-pink-100,
+.bg-pink-950,
+.bg-pink-950\/60,
+.bg-pink-950\/70,
+.bg-pink-950\/80,
+.bg-rose-500,
+.bg-roseBrand-50,
+.bg-roseBrand-100,
+.bg-roseBrand-400,
+.bg-roseBrand-500,
+.bg-roseBrand-600,
+.bg-fuchsia-500 {
+  background-color: rgba(14, 165, 233, 0.14);
+}
+
+.bg-pink-500,
+.bg-pink-600,
+.bg-roseBrand-500,
+.bg-roseBrand-600 {
+  background-color: #2563eb;
+}
+
+.text-pink-200,
+.text-pink-300,
+.text-pink-400,
+.text-pink-500,
+.text-pink-600,
+.text-pink-700,
+.text-pink-800,
+.text-rose-400,
+.text-rose-500,
+.text-rose-600,
+.text-roseBrand-100,
+.text-roseBrand-200,
+.text-roseBrand-300,
+.text-roseBrand-400,
+.text-roseBrand-500,
+.text-roseBrand-600,
+.text-roseBrand-700,
+.text-fuchsia-400,
+.text-fuchsia-500,
+.text-fuchsia-600 {
+  color: #38bdf8;
+}
+
+.border-pink-100,
+.border-pink-200,
+.border-pink-200\/50,
+.border-pink-200\/60,
+.border-pink-200\/70,
+.border-pink-200\/80,
+.border-pink-200\/90,
+.border-pink-300,
+.border-pink-500\/30,
+.border-pink-600\/50,
+.border-pink-700\/60,
+.border-pink-800,
+.border-pink-800\/60,
+.border-rose-400,
+.border-rose-500\/50,
+.border-roseBrand-100,
+.border-roseBrand-200,
+.border-roseBrand-200\/70,
+.border-roseBrand-200\/80,
+.border-roseBrand-200\/90,
+.border-roseBrand-500\/20,
+.border-roseBrand-500\/30 {
+  border-color: rgba(56, 189, 248, 0.28);
+}
+
+.hover\:bg-pink-100:hover,
+.hover\:bg-pink-600:hover,
+.hover\:bg-roseBrand-100:hover,
+.hover\:bg-roseBrand-600\/20:hover {
+  background-color: rgba(37, 99, 235, 0.18);
+}
+
+.hover\:text-pink-600:hover,
+.hover\:text-pink-300:hover,
+.hover\:text-rose-400:hover,
+.hover\:text-roseBrand-600:hover {
+  color: #38bdf8;
+}
+
+.hover\:border-pink-300:hover,
+.hover\:border-pink-400:hover,
+.hover\:border-pink-500:hover,
+.hover\:border-rose-400:hover,
+.hover\:border-roseBrand-400:hover {
+  border-color: rgba(56, 189, 248, 0.6);
+}
+
+.light body {
+  background: #f8fbff;
+  color: #0f172a;
+}
+
+.light .bg-white {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+.light .bg-slate-50,
+.light .bg-pink-50,
+.light .bg-pink-50\/40,
+.light .bg-pink-50\/50,
+.light .bg-pink-50\/60,
+.light .bg-pink-50\/70,
+.light .bg-pink-50\/80,
+.light .bg-purple-100,
+.light .bg-pink-100,
+.light .bg-brand-50,
+.light .bg-brand-100,
+.light .bg-roseBrand-50,
+.light .bg-roseBrand-100 {
+  background-color: rgba(224, 242, 254, 0.65);
+}
+
+.light .border-slate-200,
+.light .border-pink-200,
+.light .border-pink-200\/50,
+.light .border-pink-200\/60,
+.light .border-pink-200\/70,
+.light .border-pink-200\/80,
+.light .border-pink-200\/90,
+.light .border-purple-200,
+.light .border-brand-200,
+.light .border-roseBrand-100,
+.light .border-roseBrand-200,
+.light .border-roseBrand-200\/70,
+.light .border-roseBrand-200\/80,
+.light .border-roseBrand-200\/90 {
+  border-color: rgba(14, 165, 233, 0.26);
+}
+
+.light .text-pink-300,
+.light .text-pink-400,
+.light .text-pink-500,
+.light .text-pink-600,
+.light .text-pink-700,
+.light .text-purple-400,
+.light .text-purple-500,
+.light .text-purple-600,
+.light .text-purple-700,
+.light .text-brand-300,
+.light .text-brand-400,
+.light .text-brand-500,
+.light .text-brand-600,
+.light .text-brand-700,
+.light .text-roseBrand-400,
+.light .text-roseBrand-500,
+.light .text-roseBrand-600,
+.light .text-roseBrand-700 {
+  color: #2563eb;
+}
+
+.light .text-slate-900,
+.light .text-slate-800 {
+  color: #0f172a;
+}
+
+.light .text-slate-700,
+.light .text-slate-600,
+.light .text-slate-500 {
+  color: #475569;
+}
+
+.bg-roseBrand-400,
+.light .bg-brand-600,
+.light .bg-brand-700,
+.light .bg-roseBrand-500,
+.light .bg-roseBrand-600,
+.light .bg-pink-500,
+.light .bg-purple-600 {
+  background-color: #2563eb;
+}
+
+.light .hover\:bg-brand-500:hover,
+.light .hover\:bg-brand-600:hover,
+.light .hover\:bg-roseBrand-600:hover,
+.light .hover\:bg-pink-600:hover,
+.light .hover\:bg-purple-700:hover {
+  background-color: #1d4ed8;
+}
+
+.from-roseBrand-500,
+.from-roseBrand-600,
+.from-pink-500,
+.from-pink-600,
+.light .from-pink-500,
+.light .from-pink-600,
+.light .from-roseBrand-500,
+.light .from-roseBrand-600,
+.light .from-brand-500,
+.light .from-brand-600,
+.light .from-purple-500 {
+  --tw-gradient-from: #2563eb var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(37 99 235 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-fuchsia-500,
+.light .via-fuchsia-500,
+.light .via-purple-500,
+.light .via-brand-400,
+.light .via-brand-500,
+.light .via-purple-50 {
+  --tw-gradient-to: rgb(56 189 248 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #38bdf8 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-roseBrand-600,
+.to-roseBrand-700,
+.to-purple-600,
+.to-purple-700,
+.light .to-purple-600,
+.light .to-purple-700,
+.light .to-brand-600,
+.light .to-brand-700,
+.light .to-indigo-400,
+.light .to-indigo-500,
+.light .to-cyan-500,
+.light .to-pink-50 {
+  --tw-gradient-to: #7c3aed var(--tw-gradient-to-position);
+}
+
+.light .shadow-pink-500\/10,
+.light .shadow-pink-500\/30,
+.light .shadow-roseBrand-500\/20,
+.light .shadow-roseBrand-600\/20,
+.light .shadow-brand-600\/20,
+.light .shadow-brand-600\/25 {
+  --tw-shadow-color: rgb(37 99 235 / 0.18);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.light .hover\:text-pink-600:hover,
+.light .hover\:text-brand-600:hover,
+.light .hover\:text-roseBrand-600:hover {
+  color: #2563eb;
+}
+
+.light .hover\:border-pink-400:hover,
+.light .hover\:border-brand-400:hover,
+.light .hover\:border-brand-500\/40:hover,
+.light .hover\:border-roseBrand-400:hover {
+  border-color: rgba(37, 99, 235, 0.55);
 }

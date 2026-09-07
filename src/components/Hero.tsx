@@ -48,9 +48,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   return (
     <section id="hero" className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden">
       {/* Background Ambient Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-roseBrand-500/10 dark:bg-roseBrand-500/10 rounded-full blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-brand-600/15 dark:bg-brand-600/15 rounded-full blur-[130px] pointer-events-none -z-10" />
       <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-brand-500/10 dark:bg-brand-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-roseBrand-400/8 dark:bg-roseBrand-400/8 rounded-full blur-[110px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-cyanBrand-500/10 dark:bg-cyanBrand-500/10 rounded-full blur-[110px] pointer-events-none -z-10" />
 
       {/* Background Grid Pattern */}
       <div 
@@ -67,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/60 border border-brand-200 dark:border-brand-500/30 text-brand-700 dark:text-brand-300 text-xs sm:text-sm font-medium backdrop-blur-md shadow-xs mb-6 hover:border-brand-400/50 transition-colors">
               <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
               <span className="flex items-center gap-1.5 font-semibold">
-                <MaterialIcon name="school" className="text-[18px] text-roseBrand-500" />
+                <MaterialIcon name="school" className="text-[18px] text-brand-500" />
                 <span>Final-Year IT Undergraduate @ SLIIT</span>
               </span>
               <span className="text-slate-400 dark:text-slate-600" aria-hidden="true">|</span>
@@ -83,23 +83,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             <div className="h-10 sm:h-12 flex items-center mb-6">
               <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-700 dark:text-slate-300">
                 I'm a{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-roseBrand-500 via-brand-400 to-indigo-400 font-mono font-bold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-cyanBrand-400 to-indigo-400 font-mono font-bold">
                   {displayText}
                 </span>
-                <span className="text-roseBrand-500 font-bold ml-0.5">|</span>
+                <span className="text-cyanBrand-400 font-bold ml-0.5">|</span>
               </span>
             </div>
 
             {/* Concise Bio */}
             <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-              Final-year IT undergraduate at <strong className="text-slate-900 dark:text-white font-semibold">SLIIT</strong> with industry internship experience at <strong className="text-roseBrand-600 dark:text-roseBrand-300">NextGen CodeX</strong>. Skilled in engineering fast, scalable, and responsive web applications using <span className="text-roseBrand-700 dark:text-roseBrand-200 font-mono text-sm bg-roseBrand-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">React.js</span>, <span className="text-roseBrand-700 dark:text-roseBrand-200 font-mono text-sm bg-roseBrand-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">Next.js</span>, <span className="text-roseBrand-700 dark:text-roseBrand-200 font-mono text-sm bg-roseBrand-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">TypeScript</span>, and modern full-stack systems.
+              Final-year IT undergraduate at <strong className="text-slate-900 dark:text-white font-semibold">SLIIT</strong> with industry internship experience at <strong className="text-brand-600 dark:text-brand-300">NextGen CodeX</strong>. Skilled in engineering fast, scalable, and responsive web applications using <span className="text-brand-700 dark:text-cyanBrand-200 font-mono text-sm bg-cyanBrand-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">React.js</span>, <span className="text-brand-700 dark:text-cyanBrand-200 font-mono text-sm bg-cyanBrand-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">Next.js</span>, <span className="text-brand-700 dark:text-cyanBrand-200 font-mono text-sm bg-cyanBrand-50 dark:bg-slate-800 px-1.5 py-0.5 rounded">TypeScript</span>, and modern full-stack systems.
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 mb-10 w-full sm:w-auto">
               <a
                 href="#projects"
-                className="group flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-roseBrand-500 to-brand-600 hover:from-roseBrand-600 hover:to-brand-700 shadow-lg shadow-roseBrand-600/20 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
+                className="group flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 to-cyanBrand-600 hover:from-brand-500 hover:to-cyanBrand-500 shadow-lg shadow-brand-600/25 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
               >
                 <span>View Projects</span>
                 <MaterialIcon name="arrow_forward" className="text-[18px] group-hover:translate-x-1 transition-transform" />
@@ -109,7 +109,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 onClick={downloadResumeAsHTML}
                 className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/50 hover:bg-brand-100 dark:hover:bg-brand-900/60 border border-brand-200 dark:border-brand-800/80 transition-all backdrop-blur-md w-full sm:w-auto shadow-xs"
               >
-                <MaterialIcon name="download" className="text-[18px] text-roseBrand-500" />
+                <MaterialIcon name="download" className="text-[18px] text-brand-500" />
                 <span>Download Resume</span>
               </button>
 
@@ -146,14 +146,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <a
                   href={PERSONAL_INFO.socials.email}
                   aria-label="Send Email"
-                  className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 hover:border-rose-400 hover:shadow-sm transition-all hover:scale-110"
+                  className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyanBrand-600 dark:hover:text-cyanBrand-400 hover:border-cyanBrand-400 hover:shadow-sm transition-all hover:scale-110"
                 >
                   <MaterialIcon name="mail" className="text-[18px]" />
                 </a>
               </div>
 
               <div className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400">
-                <MaterialIcon name="location_on" className="text-[17px] text-rose-500" />
+                <MaterialIcon name="location_on" className="text-[17px] text-cyanBrand-500" />
                 <span>{PERSONAL_INFO.location}</span>
               </div>
 
@@ -175,12 +175,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 {/* Terminal Header */}
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-rose-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-sky-500/80" />
                     <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                     <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                   </div>
                   <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
-                    <MaterialIcon name="terminal" className="text-[17px] text-roseBrand-300" />
+                    <MaterialIcon name="terminal" className="text-[17px] text-cyanBrand-300" />
                     <span>developer.profile.ts</span>
                   </div>
                   <span className="text-[10px] text-brand-400 font-semibold px-2 py-0.5 rounded bg-brand-950/60 border border-brand-800/50">
@@ -248,7 +248,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
               {/* Floating Pill Badges around card */}
               <div className="absolute -bottom-4 -left-4 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs font-semibold text-slate-800 dark:text-white">
-                <span className="w-2 h-2 rounded-full bg-roseBrand-400" />
+                <span className="w-2 h-2 rounded-full bg-cyanBrand-400" />
                 <span>4th Year Research Ongoing</span>
               </div>
 
